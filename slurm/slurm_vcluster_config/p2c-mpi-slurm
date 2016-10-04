@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ -e /mirror/a.out ]
+then
+	rm /mirror/a.out
+fi
+
+mpicc -o /mirror/a.out $1
+
+if [ -e /mirror/a.out ]
+then
+	mpirun -np $2 -f /mirror/nodes.txt /mirror/a.out
+else
+	echo "There might be errors in your code."
+fi
+
