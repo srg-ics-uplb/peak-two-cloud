@@ -11,6 +11,7 @@ if [ -e /mirror/a.out ]
 then
 	mpirun -np $2 -f /mirror/nodes.txt /mirror/a.out
 else
+	echo "-----------------------------------"
 	echo "There might be errors in your code."
 fi
 
