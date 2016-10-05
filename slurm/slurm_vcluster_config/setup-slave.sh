@@ -12,7 +12,7 @@ cd /etc/munge
 sudo cp ~/munge.key .
 sudo chown munge: munge.key
 sudo chmod 400 munge.key
-sudo adduser user01
+sudo useradd -m -s /bin/bash user01
 sudo usermod -G mpiuser user01
 sudo service munge restart
 sudo service slurm-llnl restart
