@@ -3,10 +3,9 @@
 #This script sets up the master
 #Contact: jachermocilla@gmail.com
 
-screen -S slurm
 sudo apt-get update
-sudo apt-get install slurm-llnl
-sudo apt-get install bsd-mailx #choose local only
+sudo apt-get install slurm-llnl -y
+sudo apt-get install bsd-mailx -y #choose local only
 sudo /usr/sbin/create-munge-key #key will be at /etc/munge/munge.key
 cd /etc/slurm-llnl
 cat /etc/hosts #take note  of the host names of the master and the slaves
