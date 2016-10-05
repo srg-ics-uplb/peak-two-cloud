@@ -20,8 +20,7 @@ sudo chown slurm: /var/spool/slurm
 sudo service munge restart
 sudo service slurm-llnl restart
 sinfo -N -l #master is idle, slaves are unknown
-sudo useradd user01
-sudo passwd user01
+sudo adduser user01
 sudo usermod -G mpiuser user01
 cd
 cp /etc/slurm-llnl/slurm.conf .
