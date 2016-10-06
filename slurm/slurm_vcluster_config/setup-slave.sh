@@ -16,3 +16,5 @@ sudo useradd -m -p pazgpwQZNFF9. -s /bin/bash user01
 sudo usermod -G mpiuser user01
 sudo service munge restart
 sudo service slurm-llnl restart
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/*
