@@ -28,3 +28,4 @@ cp /etc/slurm-llnl/slurm.conf .
 sudo cp /etc/munge/munge.key .
 chmod 755 munge.key
 sudo chown mpiuser: munge.key
+su - mpiuser -c 'chmod 755 /mirror'

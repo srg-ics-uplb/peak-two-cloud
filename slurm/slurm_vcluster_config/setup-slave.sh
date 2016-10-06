@@ -18,3 +18,4 @@ sudo service munge restart
 sudo service slurm-llnl restart
 su - mpiuser -c 'chmod 700 ~/.ssh'
 su - mpiuser -c 'chmod 600 ~/.ssh/*'
+su - mpiuser -c 'chmod 755 /mirror'
