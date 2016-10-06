@@ -10,6 +10,6 @@ PASSHASH=`perl -e 'printf("%s\n", crypt($ARGV[0], "password"))' "$2"`
 
 MPIUSER_PASS=mpiuser_password
 
-echo $MPIUSER_PASS | sudo -S useradd -m -p $PASSHASH -s /bin/bash $1
+echo $MPIUSER_PASS | sudo -S useradd -m -d /mirror/$1 -p $PASSHASH -s /bin/bash $1
 echo $MPIUSER_PASS | sudo -S usermod -G mpiuser $1
-echo $MPIUSER_PASS | sudo -S chmod 711 /home/$1
+echo $MPIUSER_PASS | sudo -S chmod 711 /mirror/$1
