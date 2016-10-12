@@ -3,11 +3,6 @@
 #This script sets up the master
 #Contact: jachermocilla@gmail.com
 
-if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <cluster name>"
-    exit
-fi
-
 
 sudo echo 'Acquire::http::Proxy "http://10.0.3.201:3142";' > /etc/apt/apt.conf.d/43proxy
 sudo apt-get update
