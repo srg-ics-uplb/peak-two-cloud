@@ -14,9 +14,9 @@ cat /etc/hosts #take note  of the host names of the master and the slaves
 sudo wget https://github.com/srg-ics-uplb/peak-two-cloud/raw/master/slurm/slurm_vcluster_config/slurm.conf
 #Edit the ControlMachine and COMPUTE NODES entries
 CLUSTER_MASTER=`hostname`
-SUFFIX="-mpi-master"
+SUFFIX=-mpi-master
 CLUSTER_NAME=${CLUSTER_MASTER%$SUFFIX}
-echo "Setting cluster name to $CLUSTER_NAMEi.."
+echo "Setting cluster name to $CLUSTER_NAME.."
 sed -i "s/cmsc180/$CLUSTER_NAME/g" slurm.conf
 sudo chmod 775 /mirror
 cd /usr/bin
