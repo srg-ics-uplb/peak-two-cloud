@@ -3,6 +3,12 @@
 #This script sets up the master
 #Contact: jachermocilla@gmail.com
 
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <cluster name>"
+    exit
+fi
+
+
 sudo echo 'Acquire::http::Proxy "http://10.0.3.201:3142";' > /etc/apt/apt.conf.d/43proxy
 sudo apt-get update
 sudo apt-get install slurm-llnl -y
@@ -12,6 +18,7 @@ cd /etc/slurm-llnl
 cat /etc/hosts #take note  of the host names of the master and the slaves
 sudo wget https://github.com/srg-ics-uplb/peak-two-cloud/raw/master/slurm/slurm_vcluster_config/slurm.conf
 #Edit the ControlMachine and COMPUTE NODES entries
+sed -i "s/cmsc180/$1/g" slurm.conf
 sudo chmod 775 /mirror
 cd /usr/bin
 sudo wget https://github.com/srg-ics-uplb/peak-two-cloud/raw/master/slurm/slurm_vcluster_config/p2c-mpi-slurm
