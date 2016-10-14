@@ -13,6 +13,10 @@
 #number of tasks
 #SBATCH --ntasks=4
 
+#time limit (D-HH:MM), terminate the job after two minutes
+#if not yet done
+#SBATCH -t 0-0:02
+
 #the executable
 EXEC=hello.exe
 
