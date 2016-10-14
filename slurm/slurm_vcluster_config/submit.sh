@@ -9,10 +9,10 @@ fi
 
 
 #the name of the job
-#SBATCH --job-name=hello
+#SBATCH --job-name=mpijob
 
 #the stdout output of the job
-#SBATCH --output=hello.out
+#SBATCH --output=output.txt
 
 #available nodes
 #SBATCH --nodes=4
