@@ -4,7 +4,7 @@
 # Contact: jachermocilla@gmail.com
 
 sudo ifconfig eth0 mtu 1454
-sudo echo 'Acquire::http::Proxy "http://10.0.3.201:3142";' > /etc/apt/apt.conf.d/43proxy
+#sudo echo 'Acquire::http::Proxy "http://10.0.3.201:3142";' > /etc/apt/apt.conf.d/43proxy
 sudo apt-get update
 sudo apt-get install slurm-llnl -y
 cd /etc/slurm-llnl
