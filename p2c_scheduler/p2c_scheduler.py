@@ -48,35 +48,17 @@ class P2CScheduler(driver.Scheduler):
 	for k in node_states:
 	    LOG.debug("jach:key= %(k)s" % locals())
 
-
  
         elevated = context.elevated()
         hosts = self.hosts_up(elevated, topic)
         if not hosts:
             msg = _("Is the appropriate service running?")
             raise exception.NoValidHost(reason=msg)
- 
-        remote_ip = context.remote_address
- 
-        if remote_ip.startswith('10.1'):
-            hostname_prefix = 'doc'
-        elif remote_ip.startswith('10.2'):
-            hostname_prefix = 'ops'
-        else:
-            hostname_prefix = 'dev'
-    
-        #force hagar as host for now by jach
-        hostname_prefix = 'hagar'
-	LOG.debug("jach: instantiated")
- 
-        hosts = self._filter_hosts(request_spec, hosts, filter_properties,
-            hostname_prefix)
-        if not hosts:
-            msg = _("Could not find another compute")
-            raise exception.NoValidHost(reason=msg)
- 
+
+	#for now randomly select a host 
         host = random.choice(hosts)
-        LOG.debug("Request from %(remote_ip)s scheduled to %(host)s" % locals())
+        
+	LOG.debug("Request scheduled to %(host)s" % locals())
  
         return host
  
