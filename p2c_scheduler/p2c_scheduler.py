@@ -26,13 +26,14 @@ class P2CScheduler(driver.Scheduler):
     def __init__(self, *args, **kwargs):
         super(P2CScheduler, self).__init__(*args, **kwargs)
         self.compute_rpcapi = compute_rpcapi.ComputeAPI()
+	LOG.info("Initializing P2C Scheduler...")
  
     def _filter_hosts(self, request_spec, hosts, filter_properties,
         hostname_prefix):
         """Filter a list of hosts based on hostname prefix."""
  
 
-	LOG.debug("jach:hosts %(hosts)s" % locals())
+	LOG.info("jach:hosts %(hosts)s" % locals())
 
         hosts = [host for host in hosts if host.startswith(hostname_prefix)]
         return hosts
@@ -40,13 +41,13 @@ class P2CScheduler(driver.Scheduler):
     def _schedule(self, context, topic, request_spec, filter_properties):
         """Picks a host that is up at random."""
 	
-	LOG.debug("jach:context = %(context)s" % {'context': context.__dict__})
+	LOG.info("jach:context = %(context)s" % {'context': context.__dict__})
 	#LOG.debug("jach:request_spec = %(request_spec)s" % locals())
 	#LOG.debug("jach:filter_properties = %(filter_properties)s" % locals())
 	
 	node_states = self.host_manager.get_all_host_states(context)
 	for k in node_states:
-	    LOG.debug("jach:key= %(k)s" % locals())
+	    LOG.info("jach:key= %(k)s" % locals())
 
  
         elevated = context.elevated()
@@ -58,7 +59,7 @@ class P2CScheduler(driver.Scheduler):
 	#for now randomly select a host 
         host = random.choice(hosts)
         
-	LOG.debug("Request scheduled to %(host)s" % locals())
+	LOG.info("Request scheduled to %(host)s" % locals())
  
         return host
  
@@ -88,9 +89,9 @@ class P2CScheduler(driver.Scheduler):
         for num, instance_uuid in enumerate(instance_uuids):
             request_spec['instance_properties']['launch_index'] = num
             try:
-		LOG.debug("jach:context = %(context)s" % {'context': context.__dict__})
-		LOG.debug("jach:request_spec = %(request_spec)s" % locals())
-		LOG.debug("jach:filter_properties = %(filter_properties)s" % locals())
+		#LOG.info("jach:context = %(context)s" % {'context': context.__dict__})
+		#LOG.info("jach:request_spec = %(request_spec)s" % locals())
+		#LOG.info("jach:filter_properties = %(filter_properties)s" % locals())
                 
 		host = self._schedule(context, CONF.compute_topic,
                                       request_spec, filter_properties)
