@@ -41,11 +41,24 @@ class P2CScheduler(driver.Scheduler):
     def _schedule(self, context, topic, request_spec, filter_properties):
         """Picks a host that is up at random."""
 	
+	context_type= type(context)
+	LOG.info("JACH Context Type:  %s " % (context_type))
+	
+	context_type= type(topic)
+	LOG.info("JACH Topic Type:  %s " % (context_type))
+
+	context_type= type(request_spec)
+	LOG.info("JACH Request Spec Type:  %s " % (context_type))
+	
+	context_type= type(filter_properties)
+	LOG.info("JACH Filter Prop Type:  %s " % (context_type))
+	
 	LOG.info("jach:context = %(context)s" % {'context': context.__dict__})
 	#LOG.debug("jach:request_spec = %(request_spec)s" % locals())
 	#LOG.debug("jach:filter_properties = %(filter_properties)s" % locals())
 	
 	node_states = self.host_manager.get_all_host_states(context)
+	#LOG.info("node states %s" % type(node_states))
 	for k in node_states:
 	    LOG.info("jach:key= %(k)s" % locals())
 
