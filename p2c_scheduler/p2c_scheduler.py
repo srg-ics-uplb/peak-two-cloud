@@ -48,11 +48,13 @@ class P2CScheduler(driver.Scheduler):
         #LOG.info("JACH Topic Type:  %s " % (context_type))
 
         context_type= type(request_spec)
-        #LOG.info("JACH Request Spec Type:  %s " % (context_type))
-        LOG.info("jach:request_spec = %(request_spec)s" % locals())
+        LOG.info("JACH Request Spec Type:  %s " % (context_type))
+        #LOG.info("jach:request_spec = %(request_spec)s" % locals())
 
-        for k in request_spec:
-            LOG.info("%s %s" % (k,request_spec[k]))
+        #for k in request_spec:
+        #    LOG.info("%s %s" % (k,request_spec[k]))
+        LOG.info("Memory requested(MB): %s",request_spec['instance_properties']['memory_mb']);
+        LOG.info("VCPU requested: %s",request_spec['instance_properties']['vcpus']);
  
         context_type= type(filter_properties)
         #LOG.info("JACH Filter Prop Type:  %s " % (context_type))
