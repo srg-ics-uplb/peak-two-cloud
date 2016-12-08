@@ -63,9 +63,10 @@ class P2CScheduler(driver.Scheduler):
         #LOG.debug("jach:filter_properties = %(filter_properties)s" % locals())
         
         node_states = self.host_manager.get_all_host_states(context)
-        #LOG.info("node states %s" % type(node_states))
+        node_states = self.host_manager.host_state_map
+        LOG.info("node states %s" % type(node_states))
         for k in node_states:
-            LOG.info("jach:key= %(k)s" % locals())
+            LOG.info("jach:key= %s=%s" % (k,node_states[k]))
 
  
         elevated = context.elevated()
