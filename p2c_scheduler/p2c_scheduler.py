@@ -74,9 +74,8 @@ class P2CScheduler(driver.Scheduler):
             LOG.info("jach: %s free_ram_mb=%d" % (host.nodename,host.free_ram_mb))
             LOG.info("jach: %s vcpus_total=%d" % (host.nodename,host.vcpus_total))
             LOG.info("jach: %s vcpus_used=%d" % (host.nodename,host.vcpus_used))
+            LOG.info("jach: %s free_disk_mb=%d" % (host.nodename,host.free_disk_mb))
 
-        host_state_cls=self.host_manager.host_state_cls
- 
         elevated = context.elevated()
         hosts = self.hosts_up(elevated, topic)
         if not hosts:
