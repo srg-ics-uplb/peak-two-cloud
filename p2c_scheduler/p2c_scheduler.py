@@ -41,24 +41,27 @@ class P2CScheduler(driver.Scheduler):
     def _schedule(self, context, topic, request_spec, filter_properties):
         """Picks a host that is up at random."""
         
-        context_type= type(context)
-        LOG.info("JACH Context Type:  %s " % (context_type))
+        #context_type= type(context)
+        #LOG.info("JACH Context Type:  %s " % (context_type))
         
-        context_type= type(topic)
+        #context_type= type(topic)
         #LOG.info("JACH Topic Type:  %s " % (context_type))
 
-        context_type= type(request_spec)
-        LOG.info("JACH Request Spec Type:  %s " % (context_type))
+        #context_type= type(request_spec)
+        #LOG.info("JACH Request Spec Type:  %s " % (context_type))
         #LOG.info("jach:request_spec = %(request_spec)s" % locals())
 
-        #for k in request_spec:
-        #    LOG.info("%s %s" % (k,request_spec[k]))
-        LOG.info("Memory requested(MB): %s",request_spec['instance_properties']['memory_mb']);
-        LOG.info("VCPU requested: %s",request_spec['instance_properties']['vcpus']);
+        for k in request_spec:
+            LOG.info("%s %s" % (k,request_spec[k]))
+
+        LOG.info("jach:Memory requested(MB): %s",request_spec['instance_type']['memory_mb']);
+        LOG.info("jach:VCPU requested: %s",request_spec['instance_type']['vcpus']);
+        LOG.info("jach:Image size: %s",request_spec['image']['size']);
+        LOG.info("jach:Image name: %s",request_spec['image']['name']);
  
-        context_type= type(filter_properties)
+        #context_type= type(filter_properties)
         #LOG.info("JACH Filter Prop Type:  %s " % (context_type))
-        LOG.info("jach:filter_properties = %(filter_properties)s" % locals())
+        #LOG.info("jach:filter_properties = %(filter_properties)s" % locals())
         
         #LOG.info("jach:context = %(context)s" % {'context': context.__dict__})
         #LOG.debug("jach:request_spec = %(request_spec)s" % locals())
@@ -67,10 +70,10 @@ class P2CScheduler(driver.Scheduler):
         node_states = self.host_manager.get_all_host_states(context)
         #LOG.info("node states %s" % type(node_states))
         for host in node_states:
-            LOG.info("%s total_usable_ram=%d" % (host.nodename,host.total_usable_ram_mb))
-            LOG.info("%s free_ram_mb=%d" % (host.nodename,host.free_ram_mb))
-            LOG.info("%s vcpus_total=%d" % (host.nodename,host.vcpus_total))
-            LOG.info("%s vcpus_used=%d" % (host.nodename,host.vcpus_used))
+            LOG.info("jach: %s total_usable_ram=%d" % (host.nodename,host.total_usable_ram_mb))
+            LOG.info("jach: %s free_ram_mb=%d" % (host.nodename,host.free_ram_mb))
+            LOG.info("jach: %s vcpus_total=%d" % (host.nodename,host.vcpus_total))
+            LOG.info("jach: %s vcpus_used=%d" % (host.nodename,host.vcpus_used))
 
         host_state_cls=self.host_manager.host_state_cls
  
