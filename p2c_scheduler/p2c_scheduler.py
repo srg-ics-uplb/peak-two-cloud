@@ -63,11 +63,14 @@ class P2CScheduler(driver.Scheduler):
         #LOG.debug("jach:filter_properties = %(filter_properties)s" % locals())
         
         node_states = self.host_manager.get_all_host_states(context)
-        node_states = self.host_manager.host_state_map
-        LOG.info("node states %s" % type(node_states))
-        for k in node_states:
-            LOG.info("jach:key= %s=%s" % (k,node_states[k]))
+        #LOG.info("node states %s" % type(node_states))
+        for host in node_states:
+            LOG.info("%s total_usable_ram=%d" % (host.nodename,host.total_usable_ram_mb))
+            LOG.info("%s free_ram_mb=%d" % (host.nodename,host.free_ram_mb))
+            LOG.info("%s vcpus_total=%d" % (host.nodename,host.vcpus_total))
+            LOG.info("%s vcpus_used=%d" % (host.nodename,host.vcpus_used))
 
+        host_state_cls=self.host_manager.host_state_cls
  
         elevated = context.elevated()
         hosts = self.hosts_up(elevated, topic)
