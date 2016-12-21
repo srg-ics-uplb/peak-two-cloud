@@ -14,7 +14,7 @@ set datafile missing '-'
 set style data histograms
 set style histogram gap 2
 set ylabel "Completion time (seconds)"
-set xlabel "Application"
+set xlabel "Application (Class A)"
 set xtics border in scale 0,0 nomirror rotate by -45  autojustify
 set xtics  norangelimit 
 set xtics   ()
@@ -25,7 +25,7 @@ unset paxis 4 tics
 unset paxis 5 tics
 unset paxis 6 tics
 unset paxis 7 tics
-set title "NPB 3.3.1 Benchmark results for P2C (Class A)" 
+set title "NPB 3.3.1 Benchmark results for P2C" 
 set yrange [ 0.00 : 90. ] noreverse nowriteback
 set paxis 1 range [ * : * ] noreverse nowriteback
 set paxis 2 range [ * : * ] noreverse nowriteback
