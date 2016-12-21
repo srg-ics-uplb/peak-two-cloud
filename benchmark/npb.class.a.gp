@@ -13,7 +13,7 @@ unset logscale
 set datafile missing '-'
 set style data histograms
 set style histogram gap 2
-set ylabel "Completion time (seconds)"
+set ylabel "Completion Time (seconds)"
 set xlabel "Application (Class A)"
 set xtics border in scale 0,0 nomirror rotate by -45  autojustify
 set xtics  norangelimit 
