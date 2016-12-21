@@ -1,4 +1,4 @@
-set terminal pngcairo enhanced font "arial,10" fontscale 1.0 size 640, 400
+set terminal pngcairo enhanced font "arial,10" fontscale 1.0 size 500, 240
 set bar 1.000000 front
 set boxwidth 0.9 absolute
 set style fill   solid 1.00 border lt -1
@@ -39,6 +39,8 @@ plot for [COL=STARTCOL:ENDCOL] 'MG.A.csv' u COL:xtic(1) w histogram title column
     for [COL=STARTCOL:ENDCOL] 'MG.A.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
 
+
+set xlabel "Application (Class B)"
 
 set output 'CG.B.png'
 plot for [COL=STARTCOL:ENDCOL] 'CG.B.csv' u COL:xtic(1) w histogram title columnheader(COL), \
