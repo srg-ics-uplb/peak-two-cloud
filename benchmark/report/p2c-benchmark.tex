@@ -16,14 +16,14 @@
 \usepackage{float}
 
 
-\title{Benchmarking P2C for HPC}
+\title{Benchmarking P2C for HPC using NPB}
 \author{Joseph Anthony C. Hermocilla}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We report some benchmarking results of the Peak-Two(P2C) Cloud for High-Performance Computing(HPC) using the NAS Parallel Benchmarks (NPB).
+We report some benchmarking results of the Peak-Two Cloud(P2C) for High-Performance Computing(HPC) using the NAS Parallel Benchmarks(NPB).
 \end{abstract}
 
 \section{Introduction}
@@ -38,7 +38,11 @@ The figure below shows the hosts where the VMs used in the cluster were instanti
 
 \section{Results}
 
+The following subsections show the completion time for each program in NPB tested using different number of nodes. Ideally, the completion time of the programs should decrease as the number of nodes is increased. However, the results show some fluctuations for some programs. 
+
 \subsection{Conjugate Gradient}
+
+Performs irregular memory access and communication.
 
 \begin{figure}[H]
 \centering
@@ -54,6 +58,8 @@ The figure below shows the hosts where the VMs used in the cluster were instanti
 
 \subsection{Embarassingly Parallel}
 
+An application with very minimal communication and synchronization to complete a task.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/EPvA.png}
@@ -68,6 +74,8 @@ The figure below shows the hosts where the VMs used in the cluster were instanti
 
 
 \subsection{Fourier Transform}
+Performs all-to-all communication.
+
 
 \begin{figure}[H]
 \centering
@@ -82,6 +90,8 @@ The figure below shows the hosts where the VMs used in the cluster were instanti
 \end{figure}
 
 \subsection{Integer Sort}
+Performs random memory access.
+
 
 \begin{figure}[H]
 \centering
@@ -97,6 +107,8 @@ The figure below shows the hosts where the VMs used in the cluster were instanti
 
 \subsection{Lower-Upper Gauss-Seidel Solver}
 
+A pseudo application that solves a system of linear equations.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/LUvA.png}
@@ -110,6 +122,8 @@ The figure below shows the hosts where the VMs used in the cluster were instanti
 \end{figure}
 
 \subsection{Multi-Grid}
+
+Solves differential equations using long- and short-distance communication and is memory intensive.
 
 \begin{figure}[H]
 \centering
