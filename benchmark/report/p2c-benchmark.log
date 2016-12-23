@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.17)  23 DEC 2016 19:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.17)  23 DEC 2016 20:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -899,7 +899,7 @@ la/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/jachermocilla/
 .texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> </home/jachermocilla/.te
 xmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/jachermocilla/.texmf
 -var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
-Output written on p2c-benchmark.pdf (5 pages, 204620 bytes).
+Output written on p2c-benchmark.pdf (5 pages, 204643 bytes).
 PDF statistics:
  408 PDF objects out of 1000 (max. 8388607)
  125 compressed objects within 2 object streams
