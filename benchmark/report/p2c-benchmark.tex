@@ -13,6 +13,8 @@
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{float}
+
 
 \title{Benchmarking P2C for HPC}
 \author{Joseph Anthony C. Hermocilla}
@@ -27,31 +29,92 @@ We report some results of benchmarking P2C for HPC using NPB 3.3.1.
 \section{Introduction}
 In order to evaluate the performance of P2C for applications, NPB Benchmark applications were tested. A 16-node cluster was deployed using vcluster.
 
-\section{NPB Benchmark Applications}
+\section{Results}
 
-\subsection{CG}
+\subsection{Conjugate Gradient}
 
-See the code for Figure \ref{fig:CG_A} in this section for an example.
-
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.3\textwidth]{frog.jpg}
-%\caption{\label{fig:frog}This frog was uploaded via the project menu.}
-%\end{figure}
-
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{figures/CG.A.png}
-\caption{\label{fig:CG_A}This frog was uploaded via the project menu.}
+\includegraphics[width=0.8\textwidth]{figures/CGvA.png}
+\caption{\label{fig:CGvA}This frog was uploaded via the project menu.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{figures/CG.B.png}
-\caption{\label{fig:CG_B}This frog was uploaded via the project menu.}
+\includegraphics[width=0.8\textwidth]{figures/CGvB.png}
+\caption{\label{fig:CGvB}This frog was uploaded via the project menu.}
+\end{figure}
+
+\subsection{Embarassingly Parallel}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/EPvA.png}
+\caption{\label{fig:EPvA}This frog was uploaded via the project menu.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/EPvB.png}
+\caption{\label{fig:EPvB}This frog was uploaded via the project menu.}
 \end{figure}
 
 
+\subsection{Fourier Transform}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/FTvA.png}
+\caption{\label{fig:FTvA}This frog was uploaded via the project menu.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/FTvB.png}
+\caption{\label{fig:FTvB}This frog was uploaded via the project menu.}
+\end{figure}
+
+\subsection{Integer Sort}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/ISvA.png}
+\caption{\label{fig:ISvA}This frog was uploaded via the project menu.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/ISvB.png}
+\caption{\label{fig:ISvB}This frog was uploaded via the project menu.}
+\end{figure}
+
+\subsection{Lower-Upper Gauss-Seidel Solver}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/LUvA.png}
+\caption{\label{fig:LUvA}This frog was uploaded via the project menu.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/LUvB.png}
+\caption{\label{fig:LUvB}This frog was uploaded via the project menu.}
+\end{figure}
+
+\subsection{Multi-Grid}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/MGvA.png}
+\caption{\label{fig:MGvA}This frog was uploaded via the project menu.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/MGvB.png}
+\caption{\label{fig:MGvB}This frog was uploaded via the project menu.}
+\end{figure}
 
 \bibliographystyle{alpha}
 \bibliography{sample}

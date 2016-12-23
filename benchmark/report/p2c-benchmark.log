@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.17)  23 DEC 2016 12:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.17)  23 DEC 2016 13:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -607,24 +607,31 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip49
 )
-(./p2c-benchmark.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count139
+\float@exts=\toks40
+\float@box=\box39
+\@float@everytoks=\toks41
+\@floatcapt=\box40
+) (./p2c-benchmark.aux)
 \openout1 = `p2c-benchmark.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
- (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 *geometry* driver: auto-detecting
@@ -663,17 +670,17 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count139
+\scratchcounter=\count140
 \scratchdimen=\dimen175
-\scratchbox=\box39
-\nofMPsegments=\count140
-\nofMParguments=\count141
-\everyMPshowfont=\toks40
-\MPscratchCnt=\count142
+\scratchbox=\box41
+\nofMPsegments=\count141
+\nofMParguments=\count142
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count143
 \MPscratchDim=\dimen176
-\MPnumerator=\count143
-\makeMPintoPDFobject=\count144
-\everyMPtoPDFconversion=\toks41
+\MPnumerator=\count144
+\makeMPintoPDFobject=\count145
+\everyMPtoPDFconversion=\toks43
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -690,8 +697,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box40
-Package hyperref Info: Link coloring ON on input line 20.
+\AtBeginShipoutBox=\box42
+Package hyperref Info: Link coloring ON on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -699,67 +706,183 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count145
+\c@section@level=\count146
 )
-LaTeX Info: Redefining \ref on input line 20.
-LaTeX Info: Redefining \pageref on input line 20.
-LaTeX Info: Redefining \nameref on input line 20.
+LaTeX Info: Redefining \ref on input line 22.
+LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \nameref on input line 22.
 
 (./p2c-benchmark.out) (./p2c-benchmark.out)
 \@outlinefile=\write4
 \openout4 = `p2c-benchmark.out'.
 
 
+<figures/CGvA.png, id=39, 501.875pt x 240.9pt>
+File: figures/CGvA.png Graphic file (type png)
+ <use figures/CGvA.png>
+Package pdftex.def Info: figures/CGvA.png used on input line 38.
+(pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
 
-! LaTeX Error: Unknown graphics extension: .A.png.
+<figures/CGvB.png, id=40, 501.875pt x 240.9pt>
+File: figures/CGvB.png Graphic file (type png)
+ <use figures/CGvB.png>
+Package pdftex.def Info: figures/CGvB.png used on input line 44.
+(pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
+<figures/EPvA.png, id=41, 501.875pt x 240.9pt>
+File: figures/EPvA.png Graphic file (type png)
+ <use figures/EPvA.png>
+Package pdftex.def Info: figures/EPvA.png used on input line 52.
+(pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}pdfTeX warning (ext4): desti
+nation with the same identifier (name{figure.1}) has been already used, duplica
+te ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.44 ...ics[width=0.8\textwidth]{figures/CG.A.png}
+l.55 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.2
+}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+l.55 
+      <./figures/CGvA.png> <./figures/CGvB.png>]
+<figures/EPvB.png, id=56, 501.875pt x 240.9pt>
+File: figures/EPvB.png Graphic file (type png)
+ <use figures/EPvB.png>
+Package pdftex.def Info: figures/EPvB.png used on input line 58.
+(pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
 
+<figures/FTvA.png, id=57, 501.875pt x 240.9pt>
+File: figures/FTvA.png Graphic file (type png)
+ <use figures/FTvA.png>
+Package pdftex.def Info: figures/FTvA.png used on input line 67.
+(pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
 
-! LaTeX Error: Unknown graphics extension: .B.png.
+<figures/FTvB.png, id=58, 501.875pt x 240.9pt>
+File: figures/FTvB.png Graphic file (type png)
+ <use figures/FTvB.png>
+Package pdftex.def Info: figures/FTvB.png used on input line 73.
+(pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
+ [2pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
+ has been already used, duplicate ignored
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.50 ...ics[width=0.8\textwidth]{figures/CG.B.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+l.76 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.4
+}) has been already used, duplicate ignored
 
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.76 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.5
+}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.76 
+      <./figures/EPvA.png> <./figures/EPvB.png> <./figures/FTvA.png>]
+<figures/ISvA.png, id=66, 501.875pt x 240.9pt>
+File: figures/ISvA.png Graphic file (type png)
+ <use figures/ISvA.png>
+Package pdftex.def Info: figures/ISvA.png used on input line 81.
+(pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
+
+<figures/ISvB.png, id=67, 501.875pt x 240.9pt>
+File: figures/ISvB.png Graphic file (type png)
+ <use figures/ISvB.png>
+Package pdftex.def Info: figures/ISvB.png used on input line 87.
+(pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
+
+<figures/LUvA.png, id=68, 501.875pt x 240.9pt>
+File: figures/LUvA.png Graphic file (type png)
+ <use figures/LUvA.png>
+Package pdftex.def Info: figures/LUvA.png used on input line 95.
+(pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
+ [3pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
+ has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.98 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.7
+}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.98 
+     pdfTeX warning (ext4): destination with the same identifier (name{figure.8
+}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.98 
+      <./figures/FTvB.png> <./figures/ISvA.png> <./figures/ISvB.png>]
+<figures/LUvB.png, id=76, 501.875pt x 240.9pt>
+File: figures/LUvB.png Graphic file (type png)
+ <use figures/LUvB.png>
+Package pdftex.def Info: figures/LUvB.png used on input line 101.
+(pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
+
+<figures/MGvA.png, id=77, 501.875pt x 240.9pt>
+File: figures/MGvA.png Graphic file (type png)
+ <use figures/MGvA.png>
+Package pdftex.def Info: figures/MGvA.png used on input line 109.
+(pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
+
+<figures/MGvB.png, id=78, 501.875pt x 240.9pt>
+File: figures/MGvB.png Graphic file (type png)
+ <use figures/MGvB.png>
+Package pdftex.def Info: figures/MGvB.png used on input line 115.
+(pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
+ [4pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+ has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.118 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+10}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.118 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+11}) has been already used, duplicate ignored
+
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.118 
+       <./figures/LUvA.png> <./figures/LUvB.png> <./figures/MGvA.png>]
 No file p2c-benchmark.bbl.
-[1
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.12})
+ has been already used, duplicate ignored
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
- [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
+\@EveryShipout@Output ...@Org@Shipout \box \@cclv 
+                                                  
+l.122 \end{document}
+                     <./figures/MGvB.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
  (./p2c-benchmark.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 122.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 122.
 Package rerunfilecheck Info: File `p2c-benchmark.out' has not changed.
-(rerunfilecheck)             Checksum: 37BE640293824EAC32D21A0AB789E78C;159.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
+(rerunfilecheck)             Checksum: 52E15B6E7C252F2DF02CD3D97257D34F;493.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
  ) 
 Here is how much of TeX's memory you used:
- 17302 strings out of 494910
- 320745 string characters out of 6179835
- 399360 words of memory out of 5000000
- 20268 multiletter control sequences out of 15000+600000
+ 17448 strings out of 494910
+ 322894 string characters out of 6179835
+ 402366 words of memory out of 5000000
+ 20382 multiletter control sequences out of 15000+600000
  13205 words of font info for 34 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 62i,6n,56p,477b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,6n,56p,477b,340s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/jachermocilla/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> 
 </home/jachermocilla/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </h
 ome/jachermocilla/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home
@@ -767,10 +890,10 @@ ome/jachermocilla/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home
 chermocilla/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> </home/jache
 rmocilla/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/jachermo
 cilla/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
-Output written on p2c-benchmark.pdf (2 pages, 45484 bytes).
+Output written on p2c-benchmark.pdf (5 pages, 178627 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 300 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 137 words of extra memory for PDF output out of 10000 (max. 10000000)
 

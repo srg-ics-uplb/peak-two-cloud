@@ -1,3 +1,8 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{NPB Benchmark Applications}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{CG}{section.2}% 3
+\BOOKMARK [1][-]{section.2}{Results}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Conjugate Gradient}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Embarassingly Parallel}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Fourier Transform}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Integer Sort}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{Lower-Upper Gauss-Seidel Solver}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.6}{Multi-Grid}{section.2}% 8
