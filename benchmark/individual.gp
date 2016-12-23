@@ -5,7 +5,6 @@ set style fill   solid 1.00 border lt -1
 set style circle radius graph 0.02, first 0.00000, 0.00000 
 set style ellipse size graph 0.05, 0.03, first 0.00000 angle 0 units xy
 set ylabel "Completion Time (seconds)"
-set xlabel "Application (Class A)"
 set yrange [0:*]
 GAPSIZE=2
 set style histogram cluster gap 2
@@ -39,8 +38,6 @@ plot for [COL=STARTCOL:ENDCOL] 'MG.A.csv' u COL:xtic(1) w histogram title column
     for [COL=STARTCOL:ENDCOL] 'MG.A.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
 
-
-set xlabel "Application (Class B)"
 
 set output 'CGvB.png'
 plot for [COL=STARTCOL:ENDCOL] 'CG.B.csv' u COL:xtic(1) w histogram title columnheader(COL), \
