@@ -23,11 +23,14 @@
 \maketitle
 
 \begin{abstract}
-We report some results of benchmarking P2C for HPC using NPB 3.3.1.
+We report some benchmarking results of the Peak-Two(P2C) Cloud for High-Performance Computing(HPC) using the NAS Parallel Benchmarks (NPB).
 \end{abstract}
 
 \section{Introduction}
-In order to evaluate the performance of P2C for HPC, NPB Benchmark applications were tested. A 16-node cluster was deployed using vcluster.
+
+In order to evaluate the performance of the P2C\cite{hermocilla-p2c-ncite2014} for HPC, NPB\footnote{https://www.nas.nasa.gov/publications/npb.html} version 3.3.1 was run on a 16-node MPI cluster provisioned using vcluster\footnote{http://srg.ics.uplb.edu.ph/projects/peak-two-cloud/peak-two-cloud-resources/deployinganmpiclusterusingvcluster}.
+
+NPB consists of a set of programs that implements different computational approaches associated with Computational Fluid Dynamics(CFD). These programs represent the types of applications that are run in supercomputers and HPC clusters. In running the benchmark, classes A and B were used for each program. Different classes have different problem sizes and parameters which result to different measurements.
 
 \section{Results}
 
@@ -36,13 +39,13 @@ In order to evaluate the performance of P2C for HPC, NPB Benchmark applications 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/CGvA.png}
-\caption{\label{fig:CGvA}This frog was uploaded via the project menu.}
+\caption{\label{fig:CGvA}}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/CGvB.png}
-\caption{\label{fig:CGvB}This frog was uploaded via the project menu.}
+\caption{\label{fig:CGvB}}
 \end{figure}
 
 \subsection{Embarassingly Parallel}
@@ -50,13 +53,13 @@ In order to evaluate the performance of P2C for HPC, NPB Benchmark applications 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/EPvA.png}
-\caption{\label{fig:EPvA}This frog was uploaded via the project menu.}
+\caption{\label{fig:EPvA}}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/EPvB.png}
-\caption{\label{fig:EPvB}This frog was uploaded via the project menu.}
+\caption{\label{fig:EPvB}}
 \end{figure}
 
 
@@ -65,13 +68,13 @@ In order to evaluate the performance of P2C for HPC, NPB Benchmark applications 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/FTvA.png}
-\caption{\label{fig:FTvA}This frog was uploaded via the project menu.}
+\caption{\label{fig:FTvA}}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/FTvB.png}
-\caption{\label{fig:FTvB}This frog was uploaded via the project menu.}
+\caption{\label{fig:FTvB}}
 \end{figure}
 
 \subsection{Integer Sort}
@@ -79,13 +82,13 @@ In order to evaluate the performance of P2C for HPC, NPB Benchmark applications 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/ISvA.png}
-\caption{\label{fig:ISvA}This frog was uploaded via the project menu.}
+\caption{\label{fig:ISvA}}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/ISvB.png}
-\caption{\label{fig:ISvB}This frog was uploaded via the project menu.}
+\caption{\label{fig:ISvB}}
 \end{figure}
 
 \subsection{Lower-Upper Gauss-Seidel Solver}
@@ -93,13 +96,13 @@ In order to evaluate the performance of P2C for HPC, NPB Benchmark applications 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/LUvA.png}
-\caption{\label{fig:LUvA}This frog was uploaded via the project menu.}
+\caption{\label{fig:LUvA}}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/LUvB.png}
-\caption{\label{fig:LUvB}This frog was uploaded via the project menu.}
+\caption{\label{fig:LUvB}}
 \end{figure}
 
 \subsection{Multi-Grid}
@@ -107,16 +110,16 @@ In order to evaluate the performance of P2C for HPC, NPB Benchmark applications 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/MGvA.png}
-\caption{\label{fig:MGvA}This frog was uploaded via the project menu.}
+\caption{\label{fig:MGvA}}
 \end{figure}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/MGvB.png}
-\caption{\label{fig:MGvB}This frog was uploaded via the project menu.}
+\caption{\label{fig:MGvB}}
 \end{figure}
 
-\bibliographystyle{alpha}
-\bibliography{sample}
+\bibliographystyle{abbrv}
+\bibliography{p2c-benchmark}
 
 \end{document}
