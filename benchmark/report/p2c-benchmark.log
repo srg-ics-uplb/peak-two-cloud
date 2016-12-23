@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.17)  23 DEC 2016 20:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.17)  23 DEC 2016 21:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -878,12 +878,16 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
 Package rerunfilecheck Info: File `p2c-benchmark.out' has not changed.
 (rerunfilecheck)             Checksum: 52E15B6E7C252F2DF02CD3D97257D34F;493.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
  ) 
 Here is how much of TeX's memory you used:
  17469 strings out of 494910
  323173 string characters out of 6179835
- 402906 words of memory out of 5000000
+ 402990 words of memory out of 5000000
  20393 multiletter control sequences out of 15000+600000
  16643 words of font info for 40 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
@@ -899,9 +903,9 @@ la/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/jachermocilla/
 .texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> </home/jachermocilla/.te
 xmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/jachermocilla/.texmf
 -var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
-Output written on p2c-benchmark.pdf (5 pages, 191730 bytes).
+Output written on p2c-benchmark.pdf (5 pages, 192739 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
+ 411 PDF objects out of 1000 (max. 8388607)
  125 compressed objects within 2 object streams
  30 named destinations out of 1000 (max. 500000)
  137 words of extra memory for PDF output out of 10000 (max. 10000000)
