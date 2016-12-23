@@ -14,27 +14,27 @@ ENDCOL=6                   #Last column of data to plot (10 for your example)
 NCOL=ENDCOL-STARTCOL+1     #Number of columns we're plotting 
 BOXWIDTH=1./(GAPSIZE+NCOL) #Width of each box.
 
-set output 'CG.A.png'
+set output 'CGvA.png'
 plot for [COL=STARTCOL:ENDCOL] 'CG.A.csv' u COL:xtic(1) w histogram title columnheader(COL), \
     for [COL=STARTCOL:ENDCOL] 'CG.A.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
-set output 'EP.A.png'
+set output 'EPvA.png'
 plot for [COL=STARTCOL:ENDCOL] 'EP.A.csv' u COL:xtic(1) w histogram title columnheader(COL), \
     for [COL=STARTCOL:ENDCOL] 'EP.A.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
-set output 'FT.A.png'
+set output 'FTvA.png'
 plot for [COL=STARTCOL:ENDCOL] 'FT.A.csv' u COL:xtic(1) w histogram title columnheader(COL), \
     for [COL=STARTCOL:ENDCOL] 'FT.A.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
-set output 'IS.A.png'
+set output 'ISvA.png'
 plot for [COL=STARTCOL:ENDCOL] 'IS.A.csv' u COL:xtic(1) w histogram title columnheader(COL), \
     for [COL=STARTCOL:ENDCOL] 'IS.A.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
-set output 'LU.A.png'
+set output 'LUvA.png'
 plot for [COL=STARTCOL:ENDCOL] 'LU.A.csv' u COL:xtic(1) w histogram title columnheader(COL), \
     for [COL=STARTCOL:ENDCOL] 'LU.A.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
-set output 'MG.A.png'
+set output 'MGvA.png'
 plot for [COL=STARTCOL:ENDCOL] 'MG.A.csv' u COL:xtic(1) w histogram title columnheader(COL), \
     for [COL=STARTCOL:ENDCOL] 'MG.A.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
@@ -42,32 +42,32 @@ plot for [COL=STARTCOL:ENDCOL] 'MG.A.csv' u COL:xtic(1) w histogram title column
 
 set xlabel "Application (Class B)"
 
-set output 'CG.B.png'
+set output 'CGvB.png'
 plot for [COL=STARTCOL:ENDCOL] 'CG.B.csv' u COL:xtic(1) w histogram title columnheader(COL), \
     for [COL=STARTCOL:ENDCOL] 'CG.B.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
 
-set output 'EP.B.png'
+set output 'EPvB.png'
 plot for [COL=STARTCOL:ENDCOL] 'EP.B.csv' u COL:xtic(1) w histogram title columnheader(COL), \
     for [COL=STARTCOL:ENDCOL] 'EP.B.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
 
-set output 'FT.B.png'
+set output 'FTvB.png'
 plot for [COL=STARTCOL:ENDCOL] 'FT.B.csv' u COL:xtic(1) w histogram title columnheader(COL), \
     for [COL=STARTCOL:ENDCOL] 'FT.B.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
 
-set output 'IS.B.png'
+set output 'ISvB.png'
 plot for [COL=STARTCOL:ENDCOL] 'IS.B.csv' u COL:xtic(1) w histogram title columnheader(COL), \
     for [COL=STARTCOL:ENDCOL] 'IS.B.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
 
-set output 'LU.B.png'
+set output 'LUvB.png'
 plot for [COL=STARTCOL:ENDCOL] 'LU.B.csv' u COL:xtic(1) w histogram title columnheader(COL), \
     for [COL=STARTCOL:ENDCOL] 'LU.B.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
 
-set output 'MG.B.png'
+set output 'MGvB.png'
 plot for [COL=STARTCOL:ENDCOL] 'MG.B.csv' u COL:xtic(1) w histogram title columnheader(COL), \
     for [COL=STARTCOL:ENDCOL] 'MG.B.csv' u (column(0)-1+BOXWIDTH*(COL-STARTCOL+GAPSIZE/2+1)-0.5):COL:COL notitle w labels
 
