@@ -32,13 +32,14 @@ In order to evaluate the performance of the P2C\cite{hermocilla-p2c-ncite2014} f
 
 NPB consists of a set of programs that implements different computational approaches associated with Computational Fluid Dynamics(CFD). These programs represent the types of applications that are run in supercomputers and HPC clusters. In running the benchmark, classes A and B were used for each program. Different classes have different problem sizes and parameters which result to different measurements.
 
-The programs were run using 1, 2, 4, 8, and 16 nodes. The completion times were recorded and plotted. 
-The figure below (insert figure here) shows the hosts where the VMs used in the cluster were instantiated. 
+The programs were run using 1, 2, 4, 8, and 16 nodes. The completion times were recorded and plotted using gnuplot. Figure ~\ref{fig:vmassignment} shows the hosts where the VMs used in the cluster were instantiated. The state of the hypervisors are shown in Figure ~\ref{fig:hypervisors}.
+
+P2C uses the default FilterScheduler of OpenStack. Observe that the host cinterlabs-02 in Figure ~\ref{fig:hypervisors} is overprovisioned. It only has a total of four physical cores but five VCPUs are allocated. In Figure ~\ref{fig:vmassignment}, the cluster nodes benchmark-slave-5,benchmark-slave-13, and benchmark-slave-14 are assigned to the host cinterlabs-02.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/p2c-allocation.png}
-\caption{\label{fig:hypervisors} Hypervisor state after the cluster creation.}
+\caption{\label{fig:hypervisors} Hypervisor state after the 16-node cluster was created.}
 \end{figure}
 
 
