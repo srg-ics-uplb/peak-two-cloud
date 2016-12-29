@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.17)  29 DEC 2016 10:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.10.17)  29 DEC 2016 12:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -722,19 +722,19 @@ Overfull \hbox (10.98787pt too wide) in paragraph at lines 31--31
 -cloud-resources/deployinganmpiclusterusingvcluster| 
  []
 
-<figures/p2c-allocation.png, id=46, 1135.24126pt x 518.93875pt>
+<figures/p2c-allocation.png, id=47, 1135.24126pt x 518.93875pt>
 File: figures/p2c-allocation.png Graphic file (type png)
 
 <use figures/p2c-allocation.png>
-Package pdftex.def Info: figures/p2c-allocation.png used on input line 41.
+Package pdftex.def Info: figures/p2c-allocation.png used on input line 43.
 (pdftex.def)             Requested size: 341.43437pt x 156.07082pt.
 
-<figures/vcluster-vm-assignment.png, id=48, 1215.54124pt x 691.58376pt>
+<figures/vcluster-vm-assignment.png, id=49, 1215.54124pt x 691.58376pt>
 File: figures/vcluster-vm-assignment.png Graphic file (type png)
 
 <use figures/vcluster-vm-assignment.png>
 Package pdftex.def Info: figures/vcluster-vm-assignment.png used on input line 
-48.
+50.
 (pdftex.def)             Requested size: 341.43437pt x 194.25418pt.
  [1
 
@@ -744,144 +744,144 @@ te ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.51 
+l.53 
       <./figures/p2c-allocation.png>]
-<figures/CGvA.png, id=69, 501.875pt x 240.9pt>
+<figures/CGvA.png, id=71, 501.875pt x 240.9pt>
 File: figures/CGvA.png Graphic file (type png)
  <use figures/CGvA.png>
-Package pdftex.def Info: figures/CGvA.png used on input line 64.
+Package pdftex.def Info: figures/CGvA.png used on input line 66.
 (pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
 
-<figures/CGvB.png, id=70, 501.875pt x 240.9pt>
+<figures/CGvB.png, id=72, 501.875pt x 240.9pt>
 File: figures/CGvB.png Graphic file (type png)
  <use figures/CGvB.png>
-Package pdftex.def Info: figures/CGvB.png used on input line 70.
+Package pdftex.def Info: figures/CGvB.png used on input line 72.
 (pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
  [2pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
  has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.73 
+l.75 
      pdfTeX warning (ext4): destination with the same identifier (name{figure.3
 }) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.73 
+l.75 
       <./figures/vcluster-vm-assignment.png> <./figures/CGvA.png>]
-<figures/EPvA.png, id=78, 501.875pt x 240.9pt>
+<figures/EPvA.png, id=80, 501.875pt x 240.9pt>
 File: figures/EPvA.png Graphic file (type png)
  <use figures/EPvA.png>
-Package pdftex.def Info: figures/EPvA.png used on input line 80.
+Package pdftex.def Info: figures/EPvA.png used on input line 82.
 (pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
 
-<figures/EPvB.png, id=79, 501.875pt x 240.9pt>
+<figures/EPvB.png, id=81, 501.875pt x 240.9pt>
 File: figures/EPvB.png Graphic file (type png)
  <use figures/EPvB.png>
-Package pdftex.def Info: figures/EPvB.png used on input line 86.
+Package pdftex.def Info: figures/EPvB.png used on input line 88.
 (pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
 
-<figures/FTvA.png, id=80, 501.875pt x 240.9pt>
+<figures/FTvA.png, id=82, 501.875pt x 240.9pt>
 File: figures/FTvA.png Graphic file (type png)
  <use figures/FTvA.png>
-Package pdftex.def Info: figures/FTvA.png used on input line 97.
+Package pdftex.def Info: figures/FTvA.png used on input line 99.
 (pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
  [3pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
  has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.100 
+l.102 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 5}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.100 
+l.102 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 6}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.100 
+l.102 
        <./figures/CGvB.png> <./figures/EPvA.png> <./figures/EPvB.png>]
-<figures/FTvB.png, id=88, 501.875pt x 240.9pt>
+<figures/FTvB.png, id=90, 501.875pt x 240.9pt>
 File: figures/FTvB.png Graphic file (type png)
  <use figures/FTvB.png>
-Package pdftex.def Info: figures/FTvB.png used on input line 103.
+Package pdftex.def Info: figures/FTvB.png used on input line 105.
 (pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
 
-<figures/ISvA.png, id=89, 501.875pt x 240.9pt>
+<figures/ISvA.png, id=91, 501.875pt x 240.9pt>
 File: figures/ISvA.png Graphic file (type png)
  <use figures/ISvA.png>
-Package pdftex.def Info: figures/ISvA.png used on input line 113.
+Package pdftex.def Info: figures/ISvA.png used on input line 115.
 (pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
 
-<figures/ISvB.png, id=90, 501.875pt x 240.9pt>
+<figures/ISvB.png, id=92, 501.875pt x 240.9pt>
 File: figures/ISvB.png Graphic file (type png)
  <use figures/ISvB.png>
-Package pdftex.def Info: figures/ISvB.png used on input line 119.
+Package pdftex.def Info: figures/ISvB.png used on input line 121.
 (pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
  [4pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
  has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.122 
+l.124 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 8}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.122 
+l.124 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 9}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.122 
+l.124 
        <./figures/FTvA.png> <./figures/FTvB.png> <./figures/ISvA.png>]
-<figures/LUvA.png, id=98, 501.875pt x 240.9pt>
+<figures/LUvA.png, id=100, 501.875pt x 240.9pt>
 File: figures/LUvA.png Graphic file (type png)
  <use figures/LUvA.png>
-Package pdftex.def Info: figures/LUvA.png used on input line 129.
+Package pdftex.def Info: figures/LUvA.png used on input line 131.
 (pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
 
-<figures/LUvB.png, id=99, 501.875pt x 240.9pt>
+<figures/LUvB.png, id=101, 501.875pt x 240.9pt>
 File: figures/LUvB.png Graphic file (type png)
  <use figures/LUvB.png>
-Package pdftex.def Info: figures/LUvB.png used on input line 135.
+Package pdftex.def Info: figures/LUvB.png used on input line 137.
 (pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
 
-<figures/MGvA.png, id=100, 501.875pt x 240.9pt>
+<figures/MGvA.png, id=102, 501.875pt x 240.9pt>
 File: figures/MGvA.png Graphic file (type png)
  <use figures/MGvA.png>
-Package pdftex.def Info: figures/MGvA.png used on input line 145.
+Package pdftex.def Info: figures/MGvA.png used on input line 147.
 (pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
  [5pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
 ) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.148 
+l.150 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 11}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.148 
+l.150 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 12}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.148 
+l.150 
        <./figures/ISvB.png> <./figures/LUvA.png> <./figures/LUvB.png>]
-<figures/MGvB.png, id=108, 501.875pt x 240.9pt>
+<figures/MGvB.png, id=110, 501.875pt x 240.9pt>
 File: figures/MGvB.png Graphic file (type png)
  <use figures/MGvB.png>
-Package pdftex.def Info: figures/MGvB.png used on input line 151.
+Package pdftex.def Info: figures/MGvB.png used on input line 153.
 (pdftex.def)             Requested size: 341.43437pt x 163.89804pt.
 
 (./p2c-benchmark.bbl) [6pdfTeX warning (ext4): destination with the same identi
@@ -889,29 +889,29 @@ fier (name{figure.13}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.158 \end{document}
+l.160 \end{document}
                     pdfTeX warning (ext4): destination with the same identifier
  (name{figure.14}) has been already used, duplicate ignored
 
 \@EveryShipout@Output ...@Org@Shipout \box \@cclv 
                                                   
-l.158 \end{document}
+l.160 \end{document}
                      <./figures/MGvA.png> <./figures/MGvB.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 158.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 158.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 160.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 160.
 
 (./p2c-benchmark.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 158.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 158.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 160.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 160.
 Package rerunfilecheck Info: File `p2c-benchmark.out' has not changed.
 (rerunfilecheck)             Checksum: 52E15B6E7C252F2DF02CD3D97257D34F;493.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 158.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 160.
  ) 
 Here is how much of TeX's memory you used:
- 17484 strings out of 494910
- 323554 string characters out of 6179835
- 403181 words of memory out of 5000000
- 20403 multiletter control sequences out of 15000+600000
+ 17486 strings out of 494910
+ 323609 string characters out of 6179835
+ 403227 words of memory out of 5000000
+ 20404 multiletter control sequences out of 15000+600000
  16643 words of font info for 40 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  62i,8n,56p,477b,338s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -926,10 +926,10 @@ la/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/jachermocilla/
 .texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> </home/jachermocilla/.te
 xmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/jachermocilla/.texmf
 -var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk>
-Output written on p2c-benchmark.pdf (6 pages, 362450 bytes).
+Output written on p2c-benchmark.pdf (6 pages, 363687 bytes).
 PDF statistics:
- 420 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
+ 425 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
  147 words of extra memory for PDF output out of 10000 (max. 10000000)
 
