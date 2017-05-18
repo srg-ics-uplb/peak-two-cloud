@@ -7,7 +7,7 @@
  * Copyright (c) 2009, The University of Melbourne, Australia
  */
 
-package ph.edu.uplb.ics.srg.cloudsim;
+package edu.uplb.ics.srg.p2c;
 
 
 import java.text.DecimalFormat;
@@ -56,7 +56,7 @@ public class CloudSimExample2 {
 	 * Creates main() to run this example
 	 */
 	public static void main(String[] args) {
-
+		System.out.println("JACH");
 		Log.printLine("Starting CloudSimExample2...");
 
 	        try {
