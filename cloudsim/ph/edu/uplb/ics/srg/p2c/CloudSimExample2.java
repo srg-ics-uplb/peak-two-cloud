@@ -27,6 +27,7 @@ import org.cloudbus.cloudsim.Pe;
 import org.cloudbus.cloudsim.Storage;
 import org.cloudbus.cloudsim.UtilizationModel;
 import org.cloudbus.cloudsim.UtilizationModelFull;
+import org.cloudbus.cloudsim.UtilizationModelStochastic;
 import org.cloudbus.cloudsim.Vm;
 import org.cloudbus.cloudsim.VmAllocationPolicySimple;
 import org.cloudbus.cloudsim.VmSchedulerTimeShared;
@@ -60,7 +61,7 @@ public class CloudSimExample2 {
 		Log.printLine("Starting CloudSimExample2...");
 
 	        try {
-	        	// First step: Initialize the CloudSim package. It should be called
+	        	    // First step: Initialize the CloudSim package. It should be called
 	            	// before creating any entities.
 	            	int num_user = 1;   // number of cloud users
 	            	Calendar calendar = Calendar.getInstance();
@@ -69,6 +70,7 @@ public class CloudSimExample2 {
 	            	// Initialize the CloudSim library
 	            	CloudSim.init(num_user, calendar, trace_flag);
 
+	            		            	
 	            	// Second step: Create Datacenters
 	            	//Datacenters are the resource providers in CloudSim. We need at list one of them to run a CloudSim simulation
 	            	@SuppressWarnings("unused")
@@ -78,12 +80,12 @@ public class CloudSimExample2 {
 	            	DatacenterBroker broker = createBroker();
 	            	int brokerId = broker.getId();
 
-	            	//Fourth step: Create one virtual machine
+	            	//Fourth step: Create the virtual machines
 	            	vmlist = new ArrayList<Vm>();
 
 	            	//VM description
 	            	int vmid = 0;
-	            	int mips = 250;
+	            	int mips = 250; //processing capability millions of instructions per second
 	            	long size = 10000; //image size (MB)
 	            	int ram = 512; //vm memory (MB)
 	            	long bw = 1000; //bandwidth
@@ -103,17 +105,20 @@ public class CloudSimExample2 {
 	            	//submit vm list to the broker
 	            	broker.submitVmList(vmlist);
 
-
-	            	//Fifth step: Create two Cloudlets
+	            	////////////////////////////////////////////////////////////////////////////
+	            	
+	            	//Fifth step: Create Cloudlets
 	            	cloudletList = new ArrayList<Cloudlet>();
 
 	            	//Cloudlet properties
-	            	int id = 0;
-	            	pesNumber=1;
-	            	long length = 250000;
+	            	int id = 0;					//cloudlet id
+	            	pesNumber=1;				//number of cores required
+	            	long length = 250000;		//MIPS
 	            	long fileSize = 300;
 	            	long outputSize = 300;
-	            	UtilizationModel utilizationModel = new UtilizationModelFull();
+	            	
+	            	//UtilizationModel utilizationModel = new UtilizationModelFull();
+	            	UtilizationModel utilizationModel = new UtilizationModelStochastic();
 
 	            	Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
 	            	cloudlet1.setUserId(brokerId);
@@ -121,10 +126,20 @@ public class CloudSimExample2 {
 	            	id++;
 	            	Cloudlet cloudlet2 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
 	            	cloudlet2.setUserId(brokerId);
+	            	
+	            	id++;
+	            	Cloudlet cloudlet3 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+	            	cloudlet3.setUserId(brokerId);
 
+	            	id++;
+	            	Cloudlet cloudlet4 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+	            	cloudlet4.setUserId(brokerId);
+	            	
 	            	//add the cloudlets to the list
 	            	cloudletList.add(cloudlet1);
 	            	cloudletList.add(cloudlet2);
+	            	cloudletList.add(cloudlet3);
+	            	cloudletList.add(cloudlet4);
 
 	            	//submit cloudlet list to the broker
 	            	broker.submitCloudletList(cloudletList);
@@ -132,9 +147,12 @@ public class CloudSimExample2 {
 
 	            	//bind the cloudlets to the vms. This way, the broker
 	            	// will submit the bound cloudlets only to the specific VM
-	            	broker.bindCloudletToVm(cloudlet1.getCloudletId(),vm1.getId());
-	            	broker.bindCloudletToVm(cloudlet2.getCloudletId(),vm2.getId());
+	            	//broker.bindCloudletToVm(cloudlet1.getCloudletId(),vm1.getId());
+	            	//broker.bindCloudletToVm(cloudlet2.getCloudletId(),vm2.getId());
 
+	            	
+	            	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	            	
 	            	// Sixth step: Starts the simulation
 	            	CloudSim.startSimulation();
 
