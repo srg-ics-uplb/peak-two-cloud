@@ -117,8 +117,8 @@ public class CloudSimExample2 {
 	            	long fileSize = 300;
 	            	long outputSize = 300;
 	            	
-	            	//UtilizationModel utilizationModel = new UtilizationModelFull();
-	            	UtilizationModel utilizationModel = new UtilizationModelStochastic();
+	            	UtilizationModel utilizationModel = new UtilizationModelFull();
+	            	//UtilizationModel utilizationModel = new UtilizationModelStochastic();
 
 	            	Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
 	            	cloudlet1.setUserId(brokerId);
