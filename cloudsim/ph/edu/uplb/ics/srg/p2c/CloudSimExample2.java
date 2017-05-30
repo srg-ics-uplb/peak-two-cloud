@@ -7,7 +7,7 @@
  * Copyright (c) 2009, The University of Melbourne, Australia
  */
 
-package edu.uplb.ics.srg.p2c;
+package ph.edu.uplb.ics.srg.p2c;
 
 
 import java.text.DecimalFormat;
