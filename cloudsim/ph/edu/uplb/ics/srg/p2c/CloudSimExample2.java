@@ -92,15 +92,27 @@ public class CloudSimExample2 {
 	            	int pesNumber = 1; //number of cpus
 	            	String vmm = "Xen"; //VMM name
 
-	            	//create two VMs
-	            	Vm vm1 = new Vm(vmid, brokerId, mips, pesNumber, ram, bw, size, vmm, new CloudletSchedulerTimeShared());
+	            	//create four VMs
+	            	//Vm vm1 = new Vm(vmid, brokerId, mips, pesNumber, ram, bw, size, vmm, new CloudletSchedulerTimeShared());
+
+	            	Vm vm1 = new Vm(vmid, brokerId, mips, 1, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
 
 	            	vmid++;
-	            	Vm vm2 = new Vm(vmid, brokerId, mips, pesNumber, ram, bw, size, vmm, new CloudletSchedulerTimeShared());
+	            	Vm vm2 = new Vm(vmid, brokerId, mips, 2, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
 
+	            	vmid++;
+	            	Vm vm3 = new Vm(vmid, brokerId, mips, 1, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
+
+	            	vmid++;
+	            	Vm vm4 = new Vm(vmid, brokerId, mips, 2, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
+	            	
+	            	
+	            	
 	            	//add the VMs to the vmList
 	            	vmlist.add(vm1);
 	            	vmlist.add(vm2);
+	            	vmlist.add(vm3);
+	            	vmlist.add(vm4);
 
 	            	//submit vm list to the broker
 	            	broker.submitVmList(vmlist);
@@ -147,8 +159,8 @@ public class CloudSimExample2 {
 
 	            	//bind the cloudlets to the vms. This way, the broker
 	            	// will submit the bound cloudlets only to the specific VM
-	            	//broker.bindCloudletToVm(cloudlet1.getCloudletId(),vm1.getId());
-	            	//broker.bindCloudletToVm(cloudlet2.getCloudletId(),vm2.getId());
+	            	broker.bindCloudletToVm(cloudlet1.getCloudletId(),vm1.getId());
+	            	broker.bindCloudletToVm(cloudlet2.getCloudletId(),vm2.getId());
 
 	            	
 	            	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -180,23 +192,27 @@ public class CloudSimExample2 {
 	    	List<Host> hostList = new ArrayList<Host>();
 
 	        // 2. A Machine contains one or more PEs or CPUs/Cores.
-	    	// In this example, it will have only one core.
+	    	// In this example, it will have only four cores.
 	    	List<Pe> peList = new ArrayList<Pe>();
 
 	    	int mips = 1000;
 
 	        // 3. Create PEs and add these into a list.
 	    	peList.add(new Pe(0, new PeProvisionerSimple(mips))); // need to store Pe id and MIPS Rating
-
+	    	peList.add(new Pe(1, new PeProvisionerSimple(mips)));
+	    	peList.add(new Pe(2, new PeProvisionerSimple(mips)));
+	    	peList.add(new Pe(3, new PeProvisionerSimple(mips)));
+	    	
 	        //4. Create Host with its id and list of PEs and add them to the list of machines
 	        int hostId=0;
-	        int ram = 2048; //host memory (MB)
+	        int ram = 4096; //host memory (MB)
 	        long storage = 1000000; //host storage
 	        int bw = 10000;
 
+	        for (int hid=0;hid<1;hid++){
 	        hostList.add(
 	    			new Host(
-	    				hostId,
+	    				hid,
 	    				new RamProvisionerSimple(ram),
 	    				new BwProvisionerSimple(bw),
 	    				storage,
@@ -204,6 +220,7 @@ public class CloudSimExample2 {
 	    				new VmSchedulerTimeShared(peList)
 	    			)
 	    		); // This is our machine
+	        }
 
 
 	        // 5. Create a DatacenterCharacteristics object that stores the
