@@ -69,6 +69,7 @@ public class VmAllocationPolicyFFD extends VmAllocationPolicy {
 		return null;
 	}
 
+	//----------------------------------------------------------------------------
 	
 	/**
 	 * Gets the vm table.

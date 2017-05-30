@@ -130,19 +130,16 @@ public class CloudSimExample2 {
 	            	//UtilizationModel utilizationModel = new UtilizationModelStochastic();
 	            	//Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
 
-	            	Cloudlet cloudlet1 = new Cloudlet(id, length, 1, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+	            	Cloudlet cloudlet1 = new Cloudlet(0, length, 1, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
 	            	cloudlet1.setUserId(brokerId);
 
-	            	id++;
-	            	Cloudlet cloudlet2 = new Cloudlet(id, length, 2, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+	            	Cloudlet cloudlet2 = new Cloudlet(1, length, 2, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
 	            	cloudlet2.setUserId(brokerId);
 	            	
-	            	id++;
-	            	Cloudlet cloudlet3 = new Cloudlet(id, length, 1, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+	            	Cloudlet cloudlet3 = new Cloudlet(2, length, 1, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
 	            	cloudlet3.setUserId(brokerId);
 
-	            	id++;
-	            	Cloudlet cloudlet4 = new Cloudlet(id, length, 2, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+	            	Cloudlet cloudlet4 = new Cloudlet(3, length, 2, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
 	            	cloudlet4.setUserId(brokerId);
 	            	
 	            	//add the cloudlets to the list
