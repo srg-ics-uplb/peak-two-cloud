@@ -1,12 +1,15 @@
 package ph.edu.uplb.ics.srg.p2c;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.cloudbus.cloudsim.core.CloudSim;
+import org.cloudbus.cloudsim.DatacenterBroker;
 import org.cloudbus.cloudsim.Host;
+import org.cloudbus.cloudsim.Log;
 import org.cloudbus.cloudsim.Vm;
 import org.cloudbus.cloudsim.VmAllocationPolicy;
 
@@ -23,7 +26,6 @@ public class VmAllocationPolicyFFD extends VmAllocationPolicy {
 	/** The number of free Pes for each host from {@link #getHostList() }. */
 	private List<Integer> freePes;
 	
-	
 	public VmAllocationPolicyFFD(List<? extends Host> list) {
 		super(list);
 		setFreePes(new ArrayList<Integer>());
@@ -36,31 +38,89 @@ public class VmAllocationPolicyFFD extends VmAllocationPolicy {
 	}
 
 	public Host getHost(Vm vm){
-		return null;		
+		return getVmTable().get(vm.getUid());		
 	}
 
 	@Override
-	public boolean allocateHostForVm(Vm arg0) {
-		// TODO Auto-generated method stub
+	public boolean allocateHostForVm(Vm vm) {
+		int requiredPes = vm.getNumberOfPes();
+		boolean result = false;
+		int tries = 0;
+		List<Integer> freePesTmp = new ArrayList<Integer>();
+		for (Integer freePes : getFreePes()) {
+			freePesTmp.add(freePes);
+		}
+
+		if (!getVmTable().containsKey(vm.getUid())) { // if this vm was not created
+			do {// we still trying until we find a host or until we try all of them
+				
+				
+				int moreFree = Integer.MIN_VALUE;
+				int idx = -1;
+
+				//Collections.sort(freePesTmp);
+				Collections.reverse(freePesTmp);
+				// we want the host with less pes in use
+				for (int i = 0; i < freePesTmp.size(); i++) {
+					if (freePesTmp.get(i) > vm.getNumberOfPes()) {
+						moreFree = freePesTmp.get(i);
+						idx = i;
+					}
+				}
+
+				Host host = getHostList().get(idx);
+				result = host.vmCreate(vm);
+
+				if (result) { // if vm were succesfully created in the host
+					getVmTable().put(vm.getUid(), host);
+					getUsedPes().put(vm.getUid(), requiredPes);
+					getFreePes().set(idx, getFreePes().get(idx) - requiredPes);
+					result = true;
+					break;
+				} else {
+					//freePesTmp.set(idx, Integer.MIN_VALUE);
+				}
+				tries++;
+			} while (!result && tries < getFreePes().size());
+
+		}
+
+		return result;
+	}
+
+	@Override
+	public boolean allocateHostForVm(Vm vm, Host host) {
+		if (host.vmCreate(vm)) { // if vm has been succesfully created in the host
+			getVmTable().put(vm.getUid(), host);
+
+			int requiredPes = vm.getNumberOfPes();
+			int idx = getHostList().indexOf(host);
+			getUsedPes().put(vm.getUid(), requiredPes);
+			getFreePes().set(idx, getFreePes().get(idx) - requiredPes);
+
+			Log.formatLine(
+					"%.2f: VM #" + vm.getId() + " has been allocated to the host #" + host.getId(),
+					CloudSim.clock());
+			return true;
+		}
+
 		return false;
 	}
 
 	@Override
-	public boolean allocateHostForVm(Vm arg0, Host arg1) {
-		// TODO Auto-generated method stub
-		return false;
+	public void deallocateHostForVm(Vm vm) {
+		Host host = getVmTable().remove(vm.getUid());
+		int idx = getHostList().indexOf(host);
+		int pes = getUsedPes().remove(vm.getUid());
+		if (host != null) {
+			host.vmDestroy(vm);
+			getFreePes().set(idx, getFreePes().get(idx) + pes);
+		}		
 	}
 
 	@Override
-	public void deallocateHostForVm(Vm arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Host getHost(int arg0, int arg1) {
-		// TODO Auto-generated method stub
-		return null;
+	public Host getHost(int vmId, int userId) {
+		return getVmTable().get(Vm.getUid(userId, vmId));
 	}
 
 	@Override

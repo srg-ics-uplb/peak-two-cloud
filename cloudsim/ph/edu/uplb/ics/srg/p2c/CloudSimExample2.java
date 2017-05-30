@@ -206,7 +206,7 @@ public class CloudSimExample2 {
 	        long storage = 1000000; //host storage
 	        int bw = 10000;
 
-	        for (int hid=0;hid<2;hid++){
+	        for (int hid=0;hid<12;hid++){
 	        hostList.add(
 	    			new Host(
 	    				hid,
@@ -241,7 +241,8 @@ public class CloudSimExample2 {
 	        // 6. Finally, we need to create a PowerDatacenter object.
 	        Datacenter datacenter = null;
 	        try {
-	            datacenter = new Datacenter(name, characteristics, new VmAllocationPolicySimple(hostList), storageList, 0);
+	            //datacenter = new Datacenter(name, characteristics, new VmAllocationPolicySimple(hostList), storageList, 0);
+	            datacenter = new Datacenter(name, characteristics, new VmAllocationPolicyFFD(hostList), storageList, 0);
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }
