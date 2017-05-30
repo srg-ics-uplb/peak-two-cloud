@@ -95,16 +95,13 @@ public class CloudSimExample2 {
 	            	//create four VMs
 	            	//Vm vm1 = new Vm(vmid, brokerId, mips, pesNumber, ram, bw, size, vmm, new CloudletSchedulerTimeShared());
 
-	            	Vm vm1 = new Vm(vmid, brokerId, mips, 1, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
+	            	Vm vm1 = new Vm(0, brokerId, mips, 1, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
 
-	            	vmid++;
-	            	Vm vm2 = new Vm(vmid, brokerId, mips, 2, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
+	            	Vm vm2 = new Vm(1, brokerId, mips, 2, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
 
-	            	vmid++;
-	            	Vm vm3 = new Vm(vmid, brokerId, mips, 1, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
+	            	Vm vm3 = new Vm(2, brokerId, mips, 1, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
 
-	            	vmid++;
-	            	Vm vm4 = new Vm(vmid, brokerId, mips, 2, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
+	            	Vm vm4 = new Vm(3, brokerId, mips, 2, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
 	            	
 	            	
 	            	
@@ -131,20 +128,21 @@ public class CloudSimExample2 {
 	            	
 	            	UtilizationModel utilizationModel = new UtilizationModelFull();
 	            	//UtilizationModel utilizationModel = new UtilizationModelStochastic();
+	            	//Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
 
-	            	Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+	            	Cloudlet cloudlet1 = new Cloudlet(id, length, 1, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
 	            	cloudlet1.setUserId(brokerId);
 
 	            	id++;
-	            	Cloudlet cloudlet2 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+	            	Cloudlet cloudlet2 = new Cloudlet(id, length, 2, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
 	            	cloudlet2.setUserId(brokerId);
 	            	
 	            	id++;
-	            	Cloudlet cloudlet3 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+	            	Cloudlet cloudlet3 = new Cloudlet(id, length, 1, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
 	            	cloudlet3.setUserId(brokerId);
 
 	            	id++;
-	            	Cloudlet cloudlet4 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+	            	Cloudlet cloudlet4 = new Cloudlet(id, length, 2, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
 	            	cloudlet4.setUserId(brokerId);
 	            	
 	            	//add the cloudlets to the list
@@ -161,6 +159,8 @@ public class CloudSimExample2 {
 	            	// will submit the bound cloudlets only to the specific VM
 	            	broker.bindCloudletToVm(cloudlet1.getCloudletId(),vm1.getId());
 	            	broker.bindCloudletToVm(cloudlet2.getCloudletId(),vm2.getId());
+	            	broker.bindCloudletToVm(cloudlet3.getCloudletId(),vm3.getId());
+	            	broker.bindCloudletToVm(cloudlet4.getCloudletId(),vm4.getId());
 
 	            	
 	            	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -209,7 +209,7 @@ public class CloudSimExample2 {
 	        long storage = 1000000; //host storage
 	        int bw = 10000;
 
-	        for (int hid=0;hid<1;hid++){
+	        for (int hid=0;hid<2;hid++){
 	        hostList.add(
 	    			new Host(
 	    				hid,

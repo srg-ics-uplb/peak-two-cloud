@@ -29,7 +29,6 @@ public class VmAllocationPolicyFFD extends VmAllocationPolicy {
 		setFreePes(new ArrayList<Integer>());
 		for (Host host : getHostList()) {
 			getFreePes().add(host.getNumberOfPes());
-
 		}
 
 		setVmTable(new HashMap<String, Host>());
