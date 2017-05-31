@@ -13,6 +13,7 @@ package ph.edu.uplb.ics.srg.p2c;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -46,7 +47,7 @@ import org.cloudbus.cloudsim.provisioners.RamProvisionerSimple;
  * complete the execution.
  */
 public class CloudSimP2C {
-
+	
 	/** The cloudlet list. */
 	private static List<Cloudlet> cloudletList;
 
@@ -109,6 +110,10 @@ public class CloudSimP2C {
 	            	vmlist.add(vm2);
 	            	vmlist.add(vm3);
 	            	vmlist.add(vm4);
+	            	
+	            	//We sort the VMs based on the number of Pes for FFD
+	            	vmlist.sort(new VmComparator());
+	            	Collections.reverse(vmlist);
 
 	            	//submit vm list to the broker
 	            	broker.submitVmList(vmlist);
