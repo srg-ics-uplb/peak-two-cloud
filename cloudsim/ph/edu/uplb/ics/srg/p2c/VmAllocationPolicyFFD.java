@@ -60,7 +60,7 @@ public class VmAllocationPolicyFFD extends VmAllocationPolicy {
 
 				//Collections.sort(freePesTmp);
 				//Collections.reverse(freePesTmp);
-				// we want the host with less pes in use
+				// we want the host with less pes in usee4
 				for (int i = 0; i < freePesTmp.size(); i++) {
 					System.out.println(i+":"+freePesTmp.get(i)+":"+vm.getNumberOfPes());
 					if (freePesTmp.get(i) >= vm.getNumberOfPes()) {
