@@ -74,7 +74,7 @@ public class CloudSimExample2 {
 	            	// Second step: Create Datacenters
 	            	//Datacenters are the resource providers in CloudSim. We need at list one of them to run a CloudSim simulation
 	            	@SuppressWarnings("unused")
-					Datacenter datacenter0 = createDatacenter("Datacenter_0");
+					Datacenter datacenter0 = createDatacenter("Peak-Two_Cloud");
 
 	            	//Third step: Create Broker
 	            	DatacenterBroker broker = createBroker();
@@ -192,9 +192,11 @@ public class CloudSimExample2 {
 	    	// In this example, it will have only four cores.
 	    	List<Pe> peList = new ArrayList<Pe>();
 
-	    	int mips = 1000;
+	    	//obtained from bogomips of hosts in P2C
+	    	int mips = 6168;
 
 	        // 3. Create PEs and add these into a list.
+	    	// Hosts in P2C have four cores thus 4 Pe's here
 	    	peList.add(new Pe(0, new PeProvisionerSimple(mips))); // need to store Pe id and MIPS Rating
 	    	peList.add(new Pe(1, new PeProvisionerSimple(mips)));
 	    	peList.add(new Pe(2, new PeProvisionerSimple(mips)));
@@ -226,7 +228,7 @@ public class CloudSimExample2 {
 	        //    and its price (G$/Pe time unit).
 	        String arch = "x86";      // system architecture
 	        String os = "Linux";          // operating system
-	        String vmm = "Xen";
+	        String vmm = "KVM";
 	        double time_zone = 10.0;         // time zone this resource located
 	        double cost = 3.0;              // the cost of using processing in this resource
 	        double costPerMem = 0.05;		// the cost of using memory in this resource
