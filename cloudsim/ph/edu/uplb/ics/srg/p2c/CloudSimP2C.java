@@ -10,6 +10,7 @@
 package ph.edu.uplb.ics.srg.p2c;
 
 
+import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -36,6 +37,7 @@ import org.cloudbus.cloudsim.core.CloudSim;
 import org.cloudbus.cloudsim.provisioners.BwProvisionerSimple;
 import org.cloudbus.cloudsim.provisioners.PeProvisionerSimple;
 import org.cloudbus.cloudsim.provisioners.RamProvisionerSimple;
+import org.cloudbus.cloudsim.util.WorkloadFileReader;
 
 
 /**
@@ -54,6 +56,27 @@ public class CloudSimP2C {
 	/** The vmlist. */
 	private static List<Vm> vmlist;
 
+	
+	private static List<Cloudlet> createCloudlets() throws FileNotFoundException{
+
+		/** The cloudlet list. */
+		List<Cloudlet> cloudletList;
+
+		//Read Cloudlets from workload file in the swf format
+		//WorkloadFileReader workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/HPC2N-2002-2.1-cln.swf", 1);
+		WorkloadFileReader workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/test.swf", 1);
+
+		workloadFileReader.setField(18, -1, 2, 4, 5);
+		
+		//generate cloudlets from workload file
+		cloudletList = workloadFileReader.generateWorkload();
+
+		
+		System.out.println("Worload!");
+		return cloudletList;
+	}
+	
+	
 	/**
 	 * Creates main() to run this example
 	 */
@@ -152,16 +175,27 @@ public class CloudSimP2C {
 	            	cloudletList.add(cloudlet3);
 	            	cloudletList.add(cloudlet4);
 
-	            	//submit cloudlet list to the broker
-	            	broker.submitCloudletList(cloudletList);
+	            	
 
+	            	//submit cloudlet list to the broker
+	            	//broker.submitCloudletList(cloudletList);
+	            	
+	            	/*
+	            	cloudletList = CloudSimP2C.createCloudlets();
+	            	
+	            	for (Cloudlet c: cloudletList){
+	            		System.out.println(c.getCloudletLength()+":"+c.getCloudletId());
+	            	}
+	            	*/
+	            	
+	            	broker.submitCloudletList(cloudletList);
 
 	            	//bind the cloudlets to the vms. This way, the broker
 	            	// will submit the bound cloudlets only to the specific VM
-	            	broker.bindCloudletToVm(cloudlet1.getCloudletId(),vm1.getId());
-	            	broker.bindCloudletToVm(cloudlet2.getCloudletId(),vm2.getId());
-	            	broker.bindCloudletToVm(cloudlet3.getCloudletId(),vm3.getId());
-	            	broker.bindCloudletToVm(cloudlet4.getCloudletId(),vm4.getId());
+	            	//broker.bindCloudletToVm(cloudlet1.getCloudletId(),vm1.getId());
+	            	//broker.bindCloudletToVm(cloudlet2.getCloudletId(),vm2.getId());
+	            	//broker.bindCloudletToVm(cloudlet3.getCloudletId(),vm3.getId());
+	            	//broker.bindCloudletToVm(cloudlet4.getCloudletId(),vm4.getId());
 
 	            	
 	            	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -247,8 +281,8 @@ public class CloudSimP2C {
 	        // 6. Finally, we need to create a PowerDatacenter object.
 	        Datacenter datacenter = null;
 	        try {
-	            //datacenter = new Datacenter(name, characteristics, new VmAllocationPolicySimple(hostList), storageList, 0);
-	            datacenter = new Datacenter(name, characteristics, new VmAllocationPolicyFFD(hostList), storageList, 0);
+	            datacenter = new Datacenter(name, characteristics, new VmAllocationPolicySimple(hostList), storageList, 0);
+	            //datacenter = new Datacenter(name, characteristics, new VmAllocationPolicyFFD(hostList), storageList, 0);
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }

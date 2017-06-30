@@ -1,0 +1,33 @@
+; Version: 2.2
+; Computer: Linux cluster (Seth)
+; Installation: HPC2N - High Performance Computing Center North, Sweden
+; Acknowledge: Ake Sandgren
+; Information: http://www.hpc2n.umu.se/support/userguide/Seth/batchsystem.html
+; Conversion: Sarah Gingichashvili and Dror Feitelson (feit@cs.huji.ac.il) 01 Jan 2012
+; MaxJobs: 527371
+; MaxRecords: 527371
+; Preemption: No
+; UnixStartTime: 1027839845
+; TimeZone: 3600
+; TimeZoneString: Europe/Stockholm
+; StartTime: Sun Jul 28 09:04:05 CEST 2002
+; EndTime:   Mon Jan 16 20:31:24 CET 2006
+; MaxNodes: 240
+; MaxProcs: 240
+; Note: uses MAUI scheduler
+; MaxQueues: 1
+; Queue:  1  [fque:1]    
+; MaxPartitions: 2
+; Partition:  1  DEFAULT    
+; Partition:  2  ALL        
+;
+; Note: THIS IS A CLEANED VERSION OF THE LOG!
+;       The filters used to produce it were
+;         user=2 (305178 jobs removed)
+;         user=60 and (job>=254200 and job<=271542) (12333 jobs removed)
+;         user=67 and (job>=289098 and job<=305172) (6984 jobs removed)
+;
+    1        0 308434  31405   30  31405    -1   30  37980    -1  1   1   1  -1 -1  1 -1 -1
+    2        8 308426  31039   30  31039    -1   30  37980    -1  1   1   1  -1 -1  1 -1 -1
+    3       12 308483  30978   30  30978    -1   30  37980    -1  1   1   1  -1 -1  1 -1 -1
+    4   179350  99808 143967    2 142977    -1    2 144000    -1  1   3   1  -1 -1  1 -1 -1
