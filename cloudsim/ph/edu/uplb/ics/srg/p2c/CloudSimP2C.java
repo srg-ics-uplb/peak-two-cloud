@@ -56,6 +56,7 @@ public class CloudSimP2C {
 	/** The vmlist. */
 	private static List<Vm> vmlist;
 
+	private static WorkloadFileReader workloadFileReader;
 	
 	private static List<Cloudlet> createCloudlets() throws FileNotFoundException{
 
@@ -64,15 +65,13 @@ public class CloudSimP2C {
 
 		//Read Cloudlets from workload file in the swf format
 		//WorkloadFileReader workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/HPC2N-2002-2.1-cln.swf", 1);
-		WorkloadFileReader workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/test.swf", 1);
+		workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/sample.wrk", 1);
 
-		workloadFileReader.setField(18, -1, 2, 4, 5);
-		
 		//generate cloudlets from workload file
 		cloudletList = workloadFileReader.generateWorkload();
 
 		
-		System.out.println("Worload!");
+		System.out.println("Workload!");
 		return cloudletList;
 	}
 	
@@ -170,23 +169,26 @@ public class CloudSimP2C {
 	            	cloudlet4.setUserId(brokerId);
 	            	
 	            	//add the cloudlets to the list
-	            	cloudletList.add(cloudlet1);
-	            	cloudletList.add(cloudlet2);
-	            	cloudletList.add(cloudlet3);
-	            	cloudletList.add(cloudlet4);
+	            	//cloudletList.add(cloudlet1);
+	            	//cloudletList.add(cloudlet2);
+	            	//cloudletList.add(cloudlet3);
+	            	//cloudletList.add(cloudlet4);
 
 	            	
 
 	            	//submit cloudlet list to the broker
 	            	//broker.submitCloudletList(cloudletList);
 	            	
-	            	/*
-	            	cloudletList = CloudSimP2C.createCloudlets();
+	            	//workloadFileReader = new WorkloadFileReaderP2C("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/sample.wrk", 1);
+	            	workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/test.swf", 1);
+	            	//workloadFileReader.setBrokerId(brokerId);
+	            	cloudletList = workloadFileReader.generateWorkload();
 	            	
 	            	for (Cloudlet c: cloudletList){
-	            		System.out.println(c.getCloudletLength()+":"+c.getCloudletId());
+	            		//System.out.println(c.getCloudletLength()+":"+c.getCloudletId());
+	            		c.setUserId(brokerId);
 	            	}
-	            	*/
+	            	
 	            	
 	            	broker.submitCloudletList(cloudletList);
 
