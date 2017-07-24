@@ -180,7 +180,7 @@ public class CloudSimP2C {
 	            	//broker.submitCloudletList(cloudletList);
 	            	
 	            	//workloadFileReader = new WorkloadFileReaderP2C("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/sample.wrk", 1);
-	            	workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/HPC2N-2002-2.1-cln.swf", 1);
+	            	workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/test-input.swf", 1);
 	            	//workloadFileReader.setBrokerId(brokerId);
 	            	cloudletList = workloadFileReader.generateWorkload();
 	            	
