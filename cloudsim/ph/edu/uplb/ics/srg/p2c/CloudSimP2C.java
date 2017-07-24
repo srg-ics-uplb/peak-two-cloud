@@ -120,13 +120,13 @@ public class CloudSimP2C {
     	//create four VMs
     	//Vm vm1 = new Vm(vmid, brokerId, mips, pesNumber, ram, bw, size, vmm, new CloudletSchedulerTimeShared());
 
-    	Vm vm1 = new Vm(0, brokerId, mips, 4, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
+    	Vm vm1 = new Vm(0, brokerId, mips, 1, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
 
-    	Vm vm2 = new Vm(1, brokerId, mips, 4, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
+    	Vm vm2 = new Vm(1, brokerId, mips, 2, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
 
-    	Vm vm3 = new Vm(2, brokerId, mips, 4, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
+    	Vm vm3 = new Vm(2, brokerId, mips, 1, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
 
-    	Vm vm4 = new Vm(3, brokerId, mips, 4, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
+    	Vm vm4 = new Vm(3, brokerId, mips, 2, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
     	
     	//add the VMs to the vmList
     	vmlist.add(vm1);
@@ -205,8 +205,8 @@ public class CloudSimP2C {
         // 6. Finally, we need to create a PowerDatacenter object.
         Datacenter datacenter = null;
         try {
-            datacenter = new Datacenter(name, characteristics, new VmAllocationPolicySimple(hostList), storageList, 0);
-            //datacenter = new Datacenter(name, characteristics, new VmAllocationPolicyFFD(hostList), storageList, 0);
+            //datacenter = new Datacenter(name, characteristics, new VmAllocationPolicySimple(hostList), storageList, 0);
+            datacenter = new Datacenter(name, characteristics, new VmAllocationPolicyFFD(hostList), storageList, 0);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -287,7 +287,7 @@ public class CloudSimP2C {
 	            	//Fourth step: Create the virtual machines
 	            	vmlist=createVmList();
 	            	
-	            	//We sort the VMs based on the number of Pes for FFD
+	            	//For FFD we sort the VMs based on the number of Pes for FFD
 	            	vmlist.sort(new VmComparator());
 	            	Collections.reverse(vmlist);
 
