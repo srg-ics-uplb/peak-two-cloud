@@ -1,10 +1,5 @@
 /*
- * Title:        CloudSim Toolkit
- * Description:  CloudSim (Cloud Simulation) Toolkit for Modeling and Simulation
- *               of Clouds
- * Licence:      GPL - http://www.gnu.org/copyleft/gpl.html
- *
- * Copyright (c) 2009, The University of Melbourne, Australia
+ * @author jachermocilla@gmail.com
  */
 
 package ph.edu.uplb.ics.srg.p2c;
@@ -41,97 +36,135 @@ import org.cloudbus.cloudsim.util.WorkloadFileReader;
 
 
 /**
- * A simple example showing how to create
- * a datacenter with one host and run two
- * cloudlets on it. The cloudlets run in
- * VMs with the same MIPS requirements.
- * The cloudlets will take the same time to
- * complete the execution.
+ * Simulation of the Peak-Two Cloud(P2C) (http://srg.ics.uplb.edu.ph/projects/peak-two-cloud) 
+ * in CloudSim
  */
 public class CloudSimP2C {
 	
-	/** The cloudlet list. */
+	/** 
+	 * The cloudlet list.
+	 * The application that must run on VMs  
+	 */
 	private static List<Cloudlet> cloudletList;
 
-	/** The vmlist. */
+	/**
+	 * The list of VMs that will run on the P2C data center 
+	 */
 	private static List<Vm> vmlist;
 
+	/**
+	 * Reads workload
+	 */
 	private static WorkloadFileReader workloadFileReader;
 	
-	private static List<Cloudlet> createCloudlets() throws FileNotFoundException{
-
-		/** The cloudlet list. */
-		List<Cloudlet> cloudletList;
-
-		//Read Cloudlets from workload file in the swf format
-		//WorkloadFileReader workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/HPC2N-2002-2.1-cln.swf", 1);
-		workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/sample.wrk", 1);
-
-		//generate cloudlets from workload file
-		cloudletList = workloadFileReader.generateWorkload();
-
+	/**
+	 * Broker
+	 */
+	private static DatacenterBroker broker;
+	
 		
-		System.out.println("Workload!");
-		return cloudletList;
+	private static List<Cloudlet> createCloudlets() throws FileNotFoundException{
+		cloudletList = new ArrayList<Cloudlet>();
+
+    	//Cloudlet properties
+    	int id = 0;					//cloudlet id
+    	int pesNumber=1;				//number of cores required
+    	long length = 250000;		//MIPS
+    	long fileSize = 300;
+    	long outputSize = 300;
+
+    	int brokerId=broker.getId();
+
+    	
+    	UtilizationModel utilizationModel = new UtilizationModelFull();
+    	//UtilizationModel utilizationModel = new UtilizationModelStochastic();
+    	//Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+
+/*    	
+    	Cloudlet cloudlet1 = new Cloudlet(0, length, 1, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+    	cloudlet1.setUserId(brokerId);
+
+    	Cloudlet cloudlet2 = new Cloudlet(1, length, 2, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+    	cloudlet2.setUserId(brokerId);
+    	
+    	Cloudlet cloudlet3 = new Cloudlet(2, length, 1, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+    	cloudlet3.setUserId(brokerId);
+
+    	Cloudlet cloudlet4 = new Cloudlet(3, length, 2, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
+    	cloudlet4.setUserId(brokerId);
+*/  
+    	workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/test-input.swf", 1);
+    	cloudletList = workloadFileReader.generateWorkload();
+    	for (Cloudlet c: cloudletList){
+    		//System.out.println(c.getCloudletLength()+":"+c.getCloudletId());
+    		c.setUserId(brokerId);
+    	}
+    	
+    	return cloudletList;
 	}
 	
+	private static List<Vm> createVmList(){
+		vmlist = new ArrayList<Vm>();
+
+    	//VM description
+    	int vmid = 0;
+    	int mips = 250; //processing capability millions of instructions per second
+    	long size = 10000; //image size (MB)
+    	int ram = 512; //vm memory (MB)
+    	long bw = 1000; //bandwidth
+    	int pesNumber = 1; //number of cpus
+    	String vmm = "Xen"; //VMM name
+
+    	int brokerId=broker.getId();
+    	
+    	//create four VMs
+    	//Vm vm1 = new Vm(vmid, brokerId, mips, pesNumber, ram, bw, size, vmm, new CloudletSchedulerTimeShared());
+
+    	Vm vm1 = new Vm(0, brokerId, mips, 1, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
+
+    	Vm vm2 = new Vm(1, brokerId, mips, 2, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
+
+    	Vm vm3 = new Vm(2, brokerId, mips, 1, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
+
+    	Vm vm4 = new Vm(3, brokerId, mips, 2, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
+    	
+    	//add the VMs to the vmList
+    	vmlist.add(vm1);
+    	vmlist.add(vm2);
+    	vmlist.add(vm3);
+    	vmlist.add(vm4);
+    	
+    	return vmlist;
+		
+	}
 	
 	/**
 	 * Creates main() to run this example
 	 */
 	public static void main(String[] args) {
-		Log.printLine("Starting CloudSimP2C...");
+			Log.printLine("Starting CloudSimP2C...");
 
 	        try {
-	        	    // First step: Initialize the CloudSim package. It should be called
-	            	// before creating any entities.
 	            	int num_user = 1;   // number of cloud users
 	            	Calendar calendar = Calendar.getInstance();
 	            	boolean trace_flag = false;  // mean trace events
 
+	        	    // First step: Initialize the CloudSim package. It should be called
+	            	// before creating any entities.
 	            	// Initialize the CloudSim library
 	            	CloudSim.init(num_user, calendar, trace_flag);
 
 	            		            	
-	            	// Second step: Create Datacenters
+	            	//Second step: Create Datacenters
 	            	//Datacenters are the resource providers in CloudSim. We need at list one of them to run a CloudSim simulation
 	            	@SuppressWarnings("unused")
 					Datacenter datacenter0 = createDatacenter("Peak-Two_Cloud");
 
 	            	//Third step: Create Broker
-	            	DatacenterBroker broker = createBroker();
-	            	int brokerId = broker.getId();
-
+	            	broker = createBroker();
+	            	
 	            	//Fourth step: Create the virtual machines
-	            	vmlist = new ArrayList<Vm>();
-
-	            	//VM description
-	            	int vmid = 0;
-	            	int mips = 250; //processing capability millions of instructions per second
-	            	long size = 10000; //image size (MB)
-	            	int ram = 512; //vm memory (MB)
-	            	long bw = 1000; //bandwidth
-	            	int pesNumber = 1; //number of cpus
-	            	String vmm = "Xen"; //VMM name
-
-	            	//create four VMs
-	            	//Vm vm1 = new Vm(vmid, brokerId, mips, pesNumber, ram, bw, size, vmm, new CloudletSchedulerTimeShared());
-
-	            	Vm vm1 = new Vm(0, brokerId, mips, 1, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
-
-	            	Vm vm2 = new Vm(1, brokerId, mips, 2, 1024, bw, size, vmm, new CloudletSchedulerTimeShared());
-
-	            	Vm vm3 = new Vm(2, brokerId, mips, 1, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
-
-	            	Vm vm4 = new Vm(3, brokerId, mips, 2, 2048, bw, size, vmm, new CloudletSchedulerTimeShared());
-	            	
-	            	
-	            	
-	            	//add the VMs to the vmList
-	            	vmlist.add(vm1);
-	            	vmlist.add(vm2);
-	            	vmlist.add(vm3);
-	            	vmlist.add(vm4);
+	            	vmlist=createVmList();
 	            	
 	            	//We sort the VMs based on the number of Pes for FFD
 	            	vmlist.sort(new VmComparator());
@@ -143,51 +176,7 @@ public class CloudSimP2C {
 	            	////////////////////////////////////////////////////////////////////////////
 	            	
 	            	//Fifth step: Create Cloudlets
-	            	cloudletList = new ArrayList<Cloudlet>();
-
-	            	//Cloudlet properties
-	            	int id = 0;					//cloudlet id
-	            	pesNumber=1;				//number of cores required
-	            	long length = 250000;		//MIPS
-	            	long fileSize = 300;
-	            	long outputSize = 300;
-	            	
-	            	UtilizationModel utilizationModel = new UtilizationModelFull();
-	            	//UtilizationModel utilizationModel = new UtilizationModelStochastic();
-	            	//Cloudlet cloudlet1 = new Cloudlet(id, length, pesNumber, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
-
-	            	Cloudlet cloudlet1 = new Cloudlet(0, length, 1, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
-	            	cloudlet1.setUserId(brokerId);
-
-	            	Cloudlet cloudlet2 = new Cloudlet(1, length, 2, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
-	            	cloudlet2.setUserId(brokerId);
-	            	
-	            	Cloudlet cloudlet3 = new Cloudlet(2, length, 1, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
-	            	cloudlet3.setUserId(brokerId);
-
-	            	Cloudlet cloudlet4 = new Cloudlet(3, length, 2, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
-	            	cloudlet4.setUserId(brokerId);
-	            	
-	            	//add the cloudlets to the list
-	            	//cloudletList.add(cloudlet1);
-	            	//cloudletList.add(cloudlet2);
-	            	//cloudletList.add(cloudlet3);
-	            	//cloudletList.add(cloudlet4);
-
-	            	
-
-	            	//submit cloudlet list to the broker
-	            	//broker.submitCloudletList(cloudletList);
-	            	
-	            	//workloadFileReader = new WorkloadFileReaderP2C("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/sample.wrk", 1);
-	            	workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/test-input.swf", 1);
-	            	//workloadFileReader.setBrokerId(brokerId);
-	            	cloudletList = workloadFileReader.generateWorkload();
-	            	
-	            	for (Cloudlet c: cloudletList){
-	            		//System.out.println(c.getCloudletLength()+":"+c.getCloudletId());
-	            		c.setUserId(brokerId);
-	            	}
+	            	cloudletList = createCloudlets();
 	            	
 	            	
 	            	broker.submitCloudletList(cloudletList);
