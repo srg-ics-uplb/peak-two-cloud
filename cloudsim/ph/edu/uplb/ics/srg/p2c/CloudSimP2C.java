@@ -93,7 +93,7 @@ public class CloudSimP2C {
     	Cloudlet cloudlet4 = new Cloudlet(3, length, 2, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
     	cloudlet4.setUserId(brokerId);
 */  
-    	workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/test-input.swf", 1);
+    	workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/test-input-100.swf", 1);
     	cloudletList = workloadFileReader.generateWorkload();
     	for (Cloudlet c: cloudletList){
     		//System.out.println(c.getCloudletLength()+":"+c.getCloudletId());
@@ -138,35 +138,41 @@ public class CloudSimP2C {
 		
 	}
 	
+	
+	/** 
+	 * Creates the P2C datacenter
+	 */
+	
 	private static Datacenter createDatacenter(String name){
 
-        // Here are the steps needed to create a PowerDatacenter:
-        // 1. We need to create a list to store
+        //Here are the steps needed to create a PowerDatacenter:
+        //1. We need to create a list to store
     	//    our machine
     	List<Host> hostList = new ArrayList<Host>();
 
-        // 2. A Machine contains one or more PEs or CPUs/Cores.
-    	// In this example, it will have only four cores.
+        //2. A Machine contains one or more PEs or CPUs/Cores.
+    	//In this example, it will have only four cores.
     	List<Pe> peList = new ArrayList<Pe>();
 
     	//obtained from bogomips of hosts in P2C
     	int mips = 6168;
 
-        // 3. Create PEs and add these into a list.
-    	// Hosts in P2C have four cores thus 4 Pe's here
+        //3. Create PEs and add these into a list.
+    	//Hosts in P2C have four cores thus 4 Pe's here
     	peList.add(new Pe(0, new PeProvisionerSimple(mips))); // need to store Pe id and MIPS Rating
     	peList.add(new Pe(1, new PeProvisionerSimple(mips)));
     	peList.add(new Pe(2, new PeProvisionerSimple(mips)));
     	peList.add(new Pe(3, new PeProvisionerSimple(mips)));
     	
-        //4. Create Host with its id and list of PEs and add them to the list of machines
-        int hostId=0;
+        //4. Create Host with its id and list of PEs and add them to the list of machines in the datacenter
+        int hostId = 0;
         int ram = 4096; //host memory (MB)
         long storage = 1000000; //host storage
         int bw = 10000;
 
+        //P2C has 12 physical nodes
         for (int hid=0;hid<12;hid++){
-        hostList.add(
+        	hostList.add(
     			new Host(
     				hid,
     				new RamProvisionerSimple(ram),
@@ -175,18 +181,18 @@ public class CloudSimP2C {
     				peList,
     				new VmSchedulerTimeShared(peList)
     			)
-    		); // This is our machine
+    		); 
         }
 
 
-        // 5. Create a DatacenterCharacteristics object that stores the
+        //5. Create a DatacenterCharacteristics object that stores the
         //    properties of a data center: architecture, OS, list of
         //    Machines, allocation policy: time- or space-shared, time zone
         //    and its price (G$/Pe time unit).
         String arch = "x86";      // system architecture
         String os = "Linux";          // operating system
         String vmm = "KVM";
-        double time_zone = 10.0;         // time zone this resource located
+        double time_zone = 10.0;        // time zone this resource located
         double cost = 3.0;              // the cost of using processing in this resource
         double costPerMem = 0.05;		// the cost of using memory in this resource
         double costPerStorage = 0.001;	// the cost of using storage in this resource
@@ -195,7 +201,6 @@ public class CloudSimP2C {
 
         DatacenterCharacteristics characteristics = new DatacenterCharacteristics(
                 arch, os, vmm, hostList, time_zone, cost, costPerMem, costPerStorage, costPerBw);
-
 
         // 6. Finally, we need to create a PowerDatacenter object.
         Datacenter datacenter = null;
@@ -213,7 +218,6 @@ public class CloudSimP2C {
     //We strongly encourage users to develop their own broker policies, to submit vms and cloudlets according
     //to the specific rules of the simulated scenario
     private static DatacenterBroker createBroker(){
-
     	DatacenterBroker broker = null;
         try {
 		broker = new DatacenterBroker("Broker");
@@ -232,11 +236,11 @@ public class CloudSimP2C {
         int size = list.size();
         Cloudlet cloudlet;
 
-        String indent = "    ";
+        String indent = "     ";
         Log.printLine();
         Log.printLine("========== OUTPUT ==========");
-        Log.printLine("Cloudlet ID" + indent + "STATUS" + indent +
-                "Data center ID" + indent + "VM ID" + indent + "Time" + indent + "Start Time" + indent + "Finish Time");
+        Log.printLine("Cloudlet ID" + indent + "STATUS" + indent + 
+        		"Data center ID" + indent + "VM ID" + indent + "Time" + indent + "Start Time" + indent + "Finish Time");
 
         DecimalFormat dft = new DecimalFormat("###.##");
         for (int i = 0; i < size; i++) {
@@ -246,9 +250,11 @@ public class CloudSimP2C {
             if (cloudlet.getCloudletStatus() == Cloudlet.SUCCESS){
                 Log.print("SUCCESS");
 
+                
             	Log.printLine( indent + indent + cloudlet.getResourceId() + indent + indent + indent + cloudlet.getVmId() +
                      indent + indent + dft.format(cloudlet.getActualCPUTime()) + indent + indent + dft.format(cloudlet.getExecStartTime())+
                          indent + indent + dft.format(cloudlet.getFinishTime()));
+               
             }
         }
     }    
