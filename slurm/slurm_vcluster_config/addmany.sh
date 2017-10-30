@@ -13,7 +13,7 @@ for i in "${XYZ[@]}"
 do
         #echo $i
         COLS=( $i );
-        ./adduser.sh ${COLS[0]} ${COLS[1]}
+        ./adduser.sh ${COLS[0]} ${COLS[1]} ${COLS[2]}
 done
 
 
