@@ -21,6 +21,7 @@ LOG = logging.getLogger(__name__)
 class P2CScheduler(driver.Scheduler):
     """
     Custom nova scheduler for Peak-Two Cloud
+    http://srg.ics.uplb.edu.ph/projects/peak-two-cloud
     """
  
     def __init__(self, *args, **kwargs):
