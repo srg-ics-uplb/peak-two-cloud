@@ -93,7 +93,7 @@ public class CloudSimP2C {
     	Cloudlet cloudlet4 = new Cloudlet(3, length, 2, fileSize, outputSize, utilizationModel, utilizationModel, utilizationModel);
     	cloudlet4.setUserId(brokerId);
 */  
-    	workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/peak-two-cloud-github/cloudsim/test-input-100.swf", 1);
+    	workloadFileReader = new WorkloadFileReader("/home/jachermocilla/Sources/github/peak-two-cloud-github/cloudsim/test-input-100.swf", 1);
     	cloudletList = workloadFileReader.generateWorkload();
     	for (Cloudlet c: cloudletList){
     		//System.out.println(c.getCloudletLength()+":"+c.getCloudletId());
