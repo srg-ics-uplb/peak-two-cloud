@@ -18,6 +18,6 @@ related lines (`scheduler_*`). Add the following line:
 Restart the nova-scheduler service
 `sudo nova-scheduler restart`
 
-Start an instance and check that the scheduler gets executed through the logs
+Start an instance and check that the scheduler gets executed by viewing the logs
 
 `sudo tail -f /var/log/nova/nova-scheduler.log`
