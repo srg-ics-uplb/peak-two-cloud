@@ -11,7 +11,7 @@ Create a symlink to the p2c scheduler files(.py and .pyc) inside this
 folder to where this repo was cloned.
 
 Edit `/etc/nova/nova.conf` and comment the default nova scheduler 
-related files. Add the following line 
+related lines (`scheduler_*`). Add the following line 
 
 `scheduler_driver=nova.scheduler.p2c_scheduler.P2CScheduler`
 
