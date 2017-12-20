@@ -5,7 +5,7 @@ python -m py\_compile p2c\_scheduler.py
 
 ## Install
  
-Create a symlink to the p2c scheduler files(.py and .pyc) inside 
+On the frontend node, create a symlink to the p2c scheduler files(.py and .pyc) inside 
 `/usr/lib/python2.7/dist-packages/nova/scheduler` where this repo was cloned.
 
 Edit `/etc/nova/nova.conf` and comment out the default nova scheduler 
