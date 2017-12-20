@@ -6,5 +6,12 @@ python -m py\_compile p2c\_scheduler.py
 ## Install
 
 The nova scheduler in Ubuntu 14.04 is located in 
-`/usr/lib/python2.7/dist-packages/nova/scheduler`
+`/usr/lib/python2.7/dist-packages/nova/scheduler`.
+Create a symlink to the p2c scheduler files(.py and .pyc) inside this 
+folder to where this repo was cloned.
+
+Edit `/etc/nova/nova.conf` and comment the default nova scheduler 
+related files. Add the following line 
+
+`scheduler_driver=nova.scheduler.p2c_scheduler.P2CScheduler`
 
