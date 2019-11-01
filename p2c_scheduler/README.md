@@ -14,7 +14,7 @@ related lines (lines starting with `scheduler_*`). Add the following line:
 `scheduler_driver=nova.scheduler.p2c_scheduler.P2CScheduler`
 
 Restart the nova-scheduler service
-`sudo nova-scheduler restart`
+`sudo service nova-scheduler restart`
 
 Start an instance and check that the scheduler was executed by viewing the logs
 
